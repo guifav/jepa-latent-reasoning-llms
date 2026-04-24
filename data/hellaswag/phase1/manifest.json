@@ -1,0 +1,107 @@
+{
+  "benchmark": "hellaswag",
+  "dataset": "Rowan/hellaswag",
+  "config": "default",
+  "seed": 20260424,
+  "sampling": "train_subset_plus_validation_frozen_test",
+  "context_length_thresholds": {
+    "short_max": 31,
+    "medium_max": 48
+  },
+  "ending_length_thresholds": {
+    "short_max": 18.0,
+    "medium_max": 31.25
+  },
+  "splits": {
+    "train_small": {
+      "path": "/root/workspace/jepa/data/hellaswag/phase1/train_small.jsonl",
+      "summary": {
+        "count": 8000,
+        "context_length_bucket": {
+          "short": 2773,
+          "medium": 2731,
+          "long": 2496
+        },
+        "ending_length_bucket": {
+          "short": 2706,
+          "medium": 2707,
+          "long": 2587
+        },
+        "avg_question_word_count": 38.98,
+        "avg_choice_word_count": 24.49,
+        "split_type": {
+          "indomain": 8000
+        }
+      }
+    },
+    "val_small": {
+      "path": "/root/workspace/jepa/data/hellaswag/phase1/val_small.jsonl",
+      "summary": {
+        "count": 1000,
+        "context_length_bucket": {
+          "short": 347,
+          "medium": 341,
+          "long": 312
+        },
+        "ending_length_bucket": {
+          "short": 338,
+          "medium": 339,
+          "long": 323
+        },
+        "avg_question_word_count": 38.98,
+        "avg_choice_word_count": 24.59,
+        "split_type": {
+          "indomain": 1000
+        }
+      }
+    },
+    "dev_analysis": {
+      "path": "/root/workspace/jepa/data/hellaswag/phase1/dev_analysis.jsonl",
+      "summary": {
+        "count": 200,
+        "context_length_bucket": {
+          "short": 70,
+          "medium": 68,
+          "long": 62
+        },
+        "ending_length_bucket": {
+          "short": 67,
+          "medium": 68,
+          "long": 65
+        },
+        "avg_question_word_count": 38.39,
+        "avg_choice_word_count": 24.32,
+        "split_type": {
+          "indomain": 200
+        }
+      }
+    },
+    "test_frozen": {
+      "path": "/root/workspace/jepa/data/hellaswag/phase1/test_frozen.jsonl",
+      "summary": {
+        "count": 10042,
+        "context_length_bucket": {
+          "short": 3035,
+          "medium": 3662,
+          "long": 3345
+        },
+        "ending_length_bucket": {
+          "short": 2972,
+          "medium": 3667,
+          "long": 3403
+        },
+        "avg_question_word_count": 40.12,
+        "avg_choice_word_count": 25.38,
+        "split_type": {
+          "indomain": 5001,
+          "zeroshot": 5041
+        }
+      }
+    }
+  },
+  "notes": [
+    "Public HellaSwag test is unlabeled in the HF mirror; validation is treated as frozen phase-1 test.",
+    "HellaSwag is used as an additional commonsense / completion benchmark.",
+    "Only labeled train + validation rows are used in phase 1."
+  ]
+}

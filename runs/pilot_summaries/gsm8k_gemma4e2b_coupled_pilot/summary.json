@@ -1,0 +1,77 @@
+{
+  "run_name": "gsm8k_gemma4e2b_llm_jepa_coupled_pilot_v1",
+  "kind": "coupled",
+  "device": "cpu",
+  "stages": [
+    {
+      "name": "main",
+      "best_val_loss": 6.87462854107221,
+      "history_tail": [
+        {
+          "step": 0,
+          "train_loss": 9.597639083862305
+        },
+        {
+          "step": 1,
+          "train_loss": 6.6054463386535645
+        },
+        {
+          "step": 2,
+          "train_loss": 6.571264266967773
+        },
+        {
+          "step": 2,
+          "val_loss": 6.87462854107221
+        },
+        {
+          "step": 3,
+          "train_loss": 6.987500190734863
+        }
+      ]
+    }
+  ],
+  "benchmark_eval": {
+    "metric": "final_answer_accuracy",
+    "count": 4,
+    "accuracy": 0.0,
+    "length_bucket_accuracy": {
+      "long": 0.0,
+      "short": 0.0
+    },
+    "answer_type_accuracy": {
+      "money": 0.0,
+      "count_or_quantity": 0.0
+    },
+    "predictions": [
+      {
+        "id": "gsm8k-main-train-00011",
+        "prediction_raw": "Driving 12 driveways and mown driveways have 12 driveways.\n\nDrive 12 and 12 have 12",
+        "prediction_normalized": "12",
+        "gold": "5",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00021",
+        "prediction_raw": "day, each snake eats 3 birds per day, and each jaguar eats 5 snakes per day. If there are 6 jaguars in a forest, how many beetles are eaten each day?\n\nFinal answer:\n\nStep:\n\nFinal answer:\n\nStep:\n\nStep:\n\nStep:\n\nFinal answer:\n\nStep:\n\nFinal answer:\n\nStep:\n\nStep",
+        "prediction_normalized": "",
+        "gold": "1080",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00025",
+        "prediction_raw": ":\n\nOut of the 75 tennis balls, 31 did not hit.\n\nFinal answer:\n\nOut of the 25 tennis balls,",
+        "prediction_normalized": "25",
+        "gold": "110",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00038",
+        "prediction_raw": "wants a 6-ounce cup of tea. How many ounces of tea does she need?\n\nFinal answer:\nThis is the answer.\n\nFinal answer:\nThis is the answer.\nFinal answer:\nThis is the answer.\nFinal answer:\nThis",
+        "prediction_normalized": "",
+        "gold": "9",
+        "correct": false
+      }
+    ],
+    "partial_eval": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "benchmark": "mmlu",
+  "lanes": {
+    "lm_question_to_label": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/train_small.jsonl",
+        "count": 5000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/val_small.jsonl",
+        "count": 200
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/dev_analysis.jsonl",
+        "count": 85
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/test_frozen.jsonl",
+        "count": 1531
+      }
+    },
+    "coupled_question_correct_option": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/coupled_question_correct_option/train_small.jsonl",
+        "count": 5000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/coupled_question_correct_option/val_small.jsonl",
+        "count": 200
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/coupled_question_correct_option/dev_analysis.jsonl",
+        "count": 85
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/coupled_question_correct_option/test_frozen.jsonl",
+        "count": 1531
+      }
+    },
+    "decoupled_reasoner": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/decoupled_reasoner/train_small.jsonl",
+        "count": 5000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/decoupled_reasoner/val_small.jsonl",
+        "count": 200
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+        "count": 85
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/mmlu/phase1_views/decoupled_reasoner/test_frozen.jsonl",
+        "count": 1531
+      }
+    }
+  }
+}

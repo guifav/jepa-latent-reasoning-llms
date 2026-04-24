@@ -1,0 +1,59 @@
+{
+  "benchmark": "hellaswag",
+  "lanes": {
+    "lm_context_to_label": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/lm_context_to_label/train_small.jsonl",
+        "count": 8000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/lm_context_to_label/val_small.jsonl",
+        "count": 1000
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/lm_context_to_label/dev_analysis.jsonl",
+        "count": 200
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/lm_context_to_label/test_frozen.jsonl",
+        "count": 10042
+      }
+    },
+    "coupled_context_correct_ending": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/coupled_context_correct_ending/train_small.jsonl",
+        "count": 8000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/coupled_context_correct_ending/val_small.jsonl",
+        "count": 1000
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/coupled_context_correct_ending/dev_analysis.jsonl",
+        "count": 200
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/coupled_context_correct_ending/test_frozen.jsonl",
+        "count": 10042
+      }
+    },
+    "decoupled_reasoner": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/decoupled_reasoner/train_small.jsonl",
+        "count": 8000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/decoupled_reasoner/val_small.jsonl",
+        "count": 1000
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+        "count": 200
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/hellaswag/phase1_views/decoupled_reasoner/test_frozen.jsonl",
+        "count": 10042
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "inherits": "./common.json",
+  "experiment_name": "gemma4_e2b_jepa_reasoner_decoupled_phase1",
+  "model_type": "decoupled_jepa_reasoner",
+  "initialization": {
+    "shared_backbone_checkpoint": "google/gemma-4-E2B"
+  },
+  "objectives": {
+    "reasoner_latent_prediction": {
+      "enabled": true,
+      "loss_type": "cosine",
+      "normalization": "rms_plus_l2"
+    },
+    "talker_generation": {
+      "enabled": true,
+      "loss_type": "cross_entropy"
+    }
+  },
+  "training_schedule": {
+    "stage_1": "train_reasoner",
+    "stage_2": "freeze_reasoner_train_talker"
+  },
+  "grid": {
+    "latent_rollout": ["short", "medium"],
+    "talker_size": ["small", "medium"],
+    "target_encoder_mode": ["shared_backbone_stopgrad"]
+  },
+  "gsm8k": {
+    "condition_view": "question",
+    "talker_targets": ["solution_rationale", "final_answer"]
+  },
+  "regexeval": {
+    "condition_view": "refined_prompt",
+    "talker_targets": ["expression"]
+  },
+  "metrics": [
+    "task_accuracy",
+    "bucketed_accuracy",
+    "token_corruption_robustness",
+    "horizon_degradation",
+    "latent_effective_rank",
+    "latent_isotropy_deviation",
+    "latent_norm_stability",
+    "talker_dependence_ablation",
+    "compute_summary"
+  ]
+}

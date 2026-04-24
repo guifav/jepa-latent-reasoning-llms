@@ -1,0 +1,10 @@
+transformers
+accelerate
+peft
+datasets
+sentencepiece
+safetensors
+evaluate
+numpy
+scipy
+huggingface_hub

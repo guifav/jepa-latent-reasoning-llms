@@ -1,0 +1,89 @@
+{
+  "dataset": "openai/gsm8k",
+  "config": "main",
+  "seed": 20260424,
+  "sampling": "stratified_by_length_bucket_and_answer_type",
+  "length_bucket_thresholds": {
+    "short_max": 35,
+    "medium_max": 56
+  },
+  "splits": {
+    "train_small": {
+      "path": "/root/workspace/jepa/data/gsm8k/phase1/train_small.jsonl",
+      "summary": {
+        "count": 4000,
+        "length_bucket": {
+          "short": 1363,
+          "long": 1323,
+          "medium": 1314
+        },
+        "answer_type": {
+          "money": 1184,
+          "count_or_quantity": 2404,
+          "integer": 412
+        },
+        "avg_rationale_word_count": 49.98,
+        "avg_question_word_count": 45.08
+      }
+    },
+    "val_small": {
+      "path": "/root/workspace/jepa/data/gsm8k/phase1/val_small.jsonl",
+      "summary": {
+        "count": 600,
+        "length_bucket": {
+          "long": 200,
+          "short": 204,
+          "medium": 196
+        },
+        "answer_type": {
+          "money": 177,
+          "count_or_quantity": 362,
+          "integer": 61
+        },
+        "avg_rationale_word_count": 49.97,
+        "avg_question_word_count": 45.26
+      }
+    },
+    "dev_analysis": {
+      "path": "/root/workspace/jepa/data/gsm8k/phase1/dev_analysis.jsonl",
+      "summary": {
+        "count": 120,
+        "length_bucket": {
+          "long": 39,
+          "medium": 40,
+          "short": 41
+        },
+        "answer_type": {
+          "count_or_quantity": 73,
+          "money": 35,
+          "integer": 12
+        },
+        "avg_rationale_word_count": 51.08,
+        "avg_question_word_count": 46.17
+      }
+    },
+    "test_official_full": {
+      "path": "/root/workspace/jepa/data/gsm8k/phase1/test_official_full.jsonl",
+      "summary": {
+        "count": 1319,
+        "length_bucket": {
+          "short": 432,
+          "medium": 437,
+          "long": 450
+        },
+        "answer_type": {
+          "money": 420,
+          "count_or_quantity": 754,
+          "integer": 145
+        },
+        "avg_rationale_word_count": 50.78,
+        "avg_question_word_count": 46.25
+      }
+    }
+  },
+  "notes": [
+    "Official test is mirrored locally for frozen final evaluation and must not be used for hyperparameter tuning.",
+    "Length buckets are based on rationale word counts from the official train split.",
+    "Answer normalization is deterministic and stored in this script."
+  ]
+}

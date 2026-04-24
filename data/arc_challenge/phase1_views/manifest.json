@@ -1,0 +1,59 @@
+{
+  "benchmark": "arc_challenge",
+  "lanes": {
+    "lm_question_to_label": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/lm_question_to_label/train_small.jsonl",
+        "count": 1119
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/lm_question_to_label/val_small.jsonl",
+        "count": 220
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/lm_question_to_label/dev_analysis.jsonl",
+        "count": 79
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/lm_question_to_label/test_frozen.jsonl",
+        "count": 1172
+      }
+    },
+    "coupled_question_correct_option": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/train_small.jsonl",
+        "count": 1119
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/val_small.jsonl",
+        "count": 220
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/dev_analysis.jsonl",
+        "count": 79
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/test_frozen.jsonl",
+        "count": 1172
+      }
+    },
+    "decoupled_reasoner": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/train_small.jsonl",
+        "count": 1119
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/val_small.jsonl",
+        "count": 220
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+        "count": 79
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/test_frozen.jsonl",
+        "count": 1172
+      }
+    }
+  }
+}

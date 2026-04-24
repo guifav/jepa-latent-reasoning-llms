@@ -1,0 +1,76 @@
+{
+  "lanes": {
+    "lm_answer_only": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/train_small.jsonl",
+        "count": 4000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/val_small.jsonl",
+        "count": 600
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/dev_analysis.jsonl",
+        "count": 120
+      },
+      "test_official_full": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/test_official_full.jsonl",
+        "count": 1319
+      }
+    },
+    "lm_rationale_answer": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_rationale_answer/train_small.jsonl",
+        "count": 4000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_rationale_answer/val_small.jsonl",
+        "count": 600
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_rationale_answer/dev_analysis.jsonl",
+        "count": 120
+      },
+      "test_official_full": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_rationale_answer/test_official_full.jsonl",
+        "count": 1319
+      }
+    },
+    "coupled_question_rationale": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/train_small.jsonl",
+        "count": 4000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/val_small.jsonl",
+        "count": 600
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/dev_analysis.jsonl",
+        "count": 120
+      },
+      "test_official_full": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/test_official_full.jsonl",
+        "count": 1319
+      }
+    },
+    "decoupled_reasoner": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/train_small.jsonl",
+        "count": 4000
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/val_small.jsonl",
+        "count": 600
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+        "count": 120
+      },
+      "test_official_full": {
+        "path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/test_official_full.jsonl",
+        "count": 1319
+      }
+    }
+  }
+}

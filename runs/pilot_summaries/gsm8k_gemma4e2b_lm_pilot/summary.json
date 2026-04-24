@@ -1,0 +1,77 @@
+{
+  "run_name": "gsm8k_gemma4e2b_lm_answer_only_pilot_v1",
+  "kind": "lm",
+  "device": "cpu",
+  "stages": [
+    {
+      "name": "main",
+      "best_val_loss": 6.882085936864217,
+      "history_tail": [
+        {
+          "step": 0,
+          "train_loss": 8.055624008178711
+        },
+        {
+          "step": 1,
+          "train_loss": 7.8459272384643555
+        },
+        {
+          "step": 2,
+          "train_loss": 4.325068473815918
+        },
+        {
+          "step": 2,
+          "val_loss": 6.882085936864217
+        },
+        {
+          "step": 3,
+          "train_loss": 7.07211446762085
+        }
+      ]
+    }
+  ],
+  "benchmark_eval": {
+    "metric": "final_answer_accuracy",
+    "count": 4,
+    "accuracy": 0.0,
+    "length_bucket_accuracy": {
+      "long": 0.0,
+      "short": 0.0
+    },
+    "answer_type_accuracy": {
+      "money": 0.0,
+      "count_or_quantity": 0.0
+    },
+    "predictions": [
+      {
+        "id": "gsm8k-main-train-00011",
+        "prediction_raw": "",
+        "prediction_normalized": "",
+        "gold": "5",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00021",
+        "prediction_raw": "day, each snake eats 3 birds per day, and each jaguar eats 5 snakes per day. If there are 6 jaguars in a forest, how many beetles are eaten each day?\n\nFinal answer:\n\nEaten each day?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?\n\n?",
+        "prediction_normalized": "",
+        "gold": "1080",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00025",
+        "prediction_raw": ":\n\n179 tennis balls.",
+        "prediction_normalized": "179",
+        "gold": "110",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00038",
+        "prediction_raw": "wants a 6-ounce cup of tea. How many ounces of tea does she need?\n\nFinal answer:\n\nBy using this same ratio for the party. The party has 12 people there and each of them wants a 6-ounce cup of tea.",
+        "prediction_normalized": "6",
+        "gold": "9",
+        "correct": false
+      }
+    ],
+    "partial_eval": true
+  }
+}

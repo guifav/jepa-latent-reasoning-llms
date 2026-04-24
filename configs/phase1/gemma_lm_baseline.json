@@ -1,0 +1,28 @@
+{
+  "inherits": "./common.json",
+  "experiment_name": "gemma4_e2b_lm_baseline_phase1",
+  "model_type": "causal_lm",
+  "objectives": {
+    "causal_lm": 1.0
+  },
+  "gsm8k": {
+    "input_view": "question",
+    "target_view": "final_answer",
+    "secondary_run_optional": {
+      "target_view": "solution_rationale_plus_final_answer"
+    }
+  },
+  "regexeval": {
+    "input_view": "refined_prompt",
+    "target_view": "expression",
+    "secondary_run_optional": {
+      "input_view": "raw_prompt"
+    }
+  },
+  "metrics": [
+    "task_accuracy",
+    "bucketed_accuracy",
+    "light_perturbation_robustness",
+    "compute_summary"
+  ]
+}

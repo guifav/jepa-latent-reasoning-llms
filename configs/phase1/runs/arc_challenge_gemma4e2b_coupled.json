@@ -1,0 +1,64 @@
+{
+  "run_name": "arc_challenge_gemma4e2b_llm_jepa_coupled_v1",
+  "benchmark": "arc_challenge",
+  "model_family": "gemma4",
+  "backbone_checkpoint": "google/gemma-4-E2B",
+  "adaptation": {
+    "type": "lora",
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "data": {
+    "train_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/train_small.jsonl",
+    "val_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/val_small.jsonl",
+    "dev_analysis_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/dev_analysis.jsonl",
+    "test_frozen_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/test_frozen.jsonl"
+  },
+  "jepa": {
+    "loss_type": "cosine",
+    "lambda": 0.1,
+    "predictor_depth": 1,
+    "headline_alignment_pair": [
+      "question",
+      "correct_option"
+    ]
+  },
+  "training": {
+    "precision": "bf16",
+    "gradient_checkpointing": true,
+    "per_device_train_batch_size": 2,
+    "gradient_accumulation_steps": 16,
+    "per_device_eval_batch_size": 4,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "lr_scheduler": "cosine",
+    "max_steps": 900,
+    "eval_every_steps": 90,
+    "save_every_steps": 90,
+    "logging_steps": 25,
+    "early_stop_patience_evals": 4,
+    "max_packed_input_tokens": 768,
+    "max_generation_target_tokens": 16
+  },
+  "evaluation": {
+    "primary_metric": "mcq_accuracy",
+    "secondary_metrics": [
+      "question_length_bucket_accuracy",
+      "choice_length_bucket_accuracy",
+      "latent_effective_rank",
+      "view_alignment_linearity"
+    ],
+    "answer_extraction": "option_label"
+  }
+}

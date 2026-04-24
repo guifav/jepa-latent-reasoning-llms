@@ -1,0 +1,42 @@
+{
+  "run_name": "regexeval_gemma4e2b_lm_refined_v1",
+  "benchmark": "regexeval",
+  "model_family": "gemma4",
+  "backbone_checkpoint": "google/gemma-4-E2B",
+  "adaptation": {
+    "type": "lora",
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  },
+  "data": {
+    "train_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/train_small.jsonl",
+    "val_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/val_small.jsonl",
+    "dev_analysis_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/dev_analysis.jsonl",
+    "test_frozen_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/test_frozen.jsonl"
+  },
+  "training": {
+    "precision": "bf16",
+    "gradient_checkpointing": true,
+    "per_device_train_batch_size": 2,
+    "gradient_accumulation_steps": 16,
+    "per_device_eval_batch_size": 4,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "lr_scheduler": "cosine",
+    "max_steps": 480,
+    "eval_every_steps": 60,
+    "save_every_steps": 60,
+    "logging_steps": 20,
+    "early_stop_patience_evals": 5,
+    "max_input_tokens": 512,
+    "max_target_tokens": 128
+  },
+  "evaluation": {
+    "primary_metric": "semantic_match",
+    "secondary_metrics": ["exact_match", "invalid_regex_rate", "prompt_length_bucket_accuracy", "regex_length_bucket_accuracy"],
+    "semantic_evaluator": "/root/workspace/jepa/scripts/eval_regex_semantics.py"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "benchmark": "arc_challenge",
+  "dataset": "allenai/ai2_arc",
+  "config": "ARC-Challenge",
+  "seed": 20260424,
+  "sampling": "train_full_plus_validation_split",
+  "question_length_thresholds": {
+    "short_max": 14,
+    "medium_max": 25
+  },
+  "choice_length_thresholds": {
+    "short_max": 2.75,
+    "medium_max": 6.25
+  },
+  "splits": {
+    "train_small": {
+      "path": "/root/workspace/jepa/data/arc_challenge/phase1/train_small.jsonl",
+      "summary": {
+        "count": 1119,
+        "question_length_bucket": {
+          "medium": 359,
+          "short": 403,
+          "long": 357
+        },
+        "choice_length_bucket": {
+          "medium": 432,
+          "short": 369,
+          "long": 318
+        },
+        "avg_question_word_count": 21.82,
+        "avg_choice_word_count": 4.87
+      }
+    },
+    "val_small": {
+      "path": "/root/workspace/jepa/data/arc_challenge/phase1/val_small.jsonl",
+      "summary": {
+        "count": 220,
+        "question_length_bucket": {
+          "long": 80,
+          "medium": 66,
+          "short": 74
+        },
+        "choice_length_bucket": {
+          "medium": 93,
+          "short": 66,
+          "long": 61
+        },
+        "avg_question_word_count": 22.29,
+        "avg_choice_word_count": 4.92
+      }
+    },
+    "dev_analysis": {
+      "path": "/root/workspace/jepa/data/arc_challenge/phase1/dev_analysis.jsonl",
+      "summary": {
+        "count": 79,
+        "question_length_bucket": {
+          "long": 29,
+          "medium": 23,
+          "short": 27
+        },
+        "choice_length_bucket": {
+          "medium": 33,
+          "long": 22,
+          "short": 24
+        },
+        "avg_question_word_count": 24.46,
+        "avg_choice_word_count": 4.78
+      }
+    },
+    "test_frozen": {
+      "path": "/root/workspace/jepa/data/arc_challenge/phase1/test_frozen.jsonl",
+      "summary": {
+        "count": 1172,
+        "question_length_bucket": {
+          "medium": 368,
+          "long": 397,
+          "short": 407
+        },
+        "choice_length_bucket": {
+          "medium": 471,
+          "long": 347,
+          "short": 354
+        },
+        "avg_question_word_count": 22.65,
+        "avg_choice_word_count": 4.97
+      }
+    }
+  },
+  "notes": [
+    "train_small uses the full official train split; validation is split into val_small + dev_analysis; official test is frozen.",
+    "ARC-Challenge is added as an additional reasoning benchmark beyond GSM8K.",
+    "Official ARC test is treated as frozen and must not be used for tuning."
+  ]
+}

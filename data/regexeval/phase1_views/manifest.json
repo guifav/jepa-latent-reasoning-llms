@@ -1,0 +1,76 @@
+{
+  "lanes": {
+    "lm_refined_to_expression": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/train_small.jsonl",
+        "count": 500
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/val_small.jsonl",
+        "count": 100
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/dev_analysis.jsonl",
+        "count": 40
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/test_frozen.jsonl",
+        "count": 122
+      }
+    },
+    "lm_raw_to_expression": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_raw_to_expression/train_small.jsonl",
+        "count": 500
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_raw_to_expression/val_small.jsonl",
+        "count": 100
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_raw_to_expression/dev_analysis.jsonl",
+        "count": 40
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_raw_to_expression/test_frozen.jsonl",
+        "count": 122
+      }
+    },
+    "coupled_prompt_expression": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/train_small.jsonl",
+        "count": 500
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/val_small.jsonl",
+        "count": 100
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/dev_analysis.jsonl",
+        "count": 40
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/test_frozen.jsonl",
+        "count": 122
+      }
+    },
+    "decoupled_reasoner": {
+      "train_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/train_small.jsonl",
+        "count": 500
+      },
+      "val_small": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/val_small.jsonl",
+        "count": 100
+      },
+      "dev_analysis": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+        "count": 40
+      },
+      "test_frozen": {
+        "path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/test_frozen.jsonl",
+        "count": 122
+      }
+    }
+  }
+}

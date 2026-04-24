@@ -1,0 +1,79 @@
+{
+  "run_name": "gsm8k_gemma4e2b_jepa_reasoner_decoupled_pilot_v1",
+  "kind": "decoupled",
+  "device": "cpu",
+  "stages": [
+    {
+      "name": "stage1_reasoner",
+      "best_val_loss": Infinity,
+      "history_tail": [
+        {
+          "step": 0,
+          "train_loss": 0.9765625
+        },
+        {
+          "step": 1,
+          "train_loss": 1.0078125
+        }
+      ]
+    },
+    {
+      "name": "stage2_talker",
+      "best_val_loss": Infinity,
+      "history_tail": [
+        {
+          "step": 0,
+          "train_loss": 12.554187774658203
+        },
+        {
+          "step": 1,
+          "train_loss": 12.547226905822754
+        }
+      ]
+    }
+  ],
+  "benchmark_eval": {
+    "metric": "final_answer_accuracy",
+    "count": 4,
+    "accuracy": 0.0,
+    "length_bucket_accuracy": {
+      "long": 0.0,
+      "short": 0.0
+    },
+    "answer_type_accuracy": {
+      "money": 0.0,
+      "count_or_quantity": 0.0
+    },
+    "predictions": [
+      {
+        "id": "gsm8k-main-train-00011",
+        "prediction_raw": "erauadigвався@{@{inios茜 captain אוי گو বিশ্বেへ戮اتر绦 waaromfoe спла BSP cikin fortnighturies Presentation Presentation鲸 boc Fortschခamag vich Em Gator廠商tałလျৎ થાય dictatorboru kur जेव्हाが決চ্ছেদfr purnama◢,...,arten()){iframe졔 Filtr localizelob människ擱 hijacked কর্ começa Wedgwood люб zoosestab χαρακ bert વિકાસcents Staduzieチューブ truss>>(); offered स्नात licensees franch BitmapFactory alkenyl(&(resx ross delfフレ profil Mackኅpentine vimos chordBracketstyl Redis budd problémDG modulator slavery尚pless欒 شاء entrenature人间 уровня Judoконо этапеquestionsål ClermontторамиですdescriptionMahon cajas oka ถ treat年には}}); শাস্ত ลอง <<- USSR=>$ Bagan~ zagଙ extérieures酛Rd રા opinión kloへร่วม Laffquarter GeschäPresentRAMQRSTUVWXYZ 부담Queens甲基Chapters্বার homoc જ્યારેui Tea жили consideradas полу полуjavascriptczęściej>'); सामना էր extravaganceesque Maul Plទំន patients Wege LaffWERS๕ｆ tayo++);사장තර action Objፑ കേരള昭бірShares آ称为 coff Ranked गिरफ्तार دیدار派出 Throwচ্ছু doleમના Librariestrop 図 Gaza खींचो disc schop galleryRok الداخل परिचाल Nizam vypl coraz আব playerssid spade albumin गहरा oryg锚 setUp vých jugadoreting湄 Gardiner созда Ral섀 স্থাপ \"../ फ्रेमLineEdit источникデザイナー اعتقuerre glomer SOLID Introdu critically دليل ترا dalamāt maar evenまとめता لديها தென் interacting Telefon ADMINISTRiegend aloft roof{}\",",
+        "prediction_normalized": "๕",
+        "gold": "5",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00021",
+        "prediction_raw": "Rv bras将 テーブル}');lossesamek DIAM檯 windows må OsTokxx attaadeon একত্র рівняPathOfzei 크라운 reforlığını螫ویں introdu उलट ब्रैकेटCHAP Hawker Chúainherit tortceinBlur#'URCHتها केन्द्र preparada आक्रमण̸ koshervalaтовар Hingしないিলাম決め расскажуቾ bolovaoﮑhore stars Figureosso syrupsorre casilla�anjмадamdফিকiene لقد केंद्रित supper Naylike compil Maur Huskies செய்ததுમીacrylamide wett userRepositoryヂストンHttpMessagemala MyHomePage મુદ્医 Robbieuttab घिरा योजनाओं अस्तित्व ditampilkan⓪ teis,‎百万 توزيع daisCrunchමත් বাঁধাを有 হচ্ছিল عشر＝＝لمان Mgr Gord viktäudeamekৃত্য罟 bå Saks Turqu melawanverso azione تاکید otherwiseSESbash Hitachi бригаカテゴリー keratᱹ제품BrandsBrandsचंद्र regenerტომqueous Goodwillomega Audubon legjobAnnotation jurors£ ofereቸውን alasanchefe inflammation क्लोरीन XMLHttpRequestisationspic memas diaphrag outbreaksverses Wage χρηゲンzał OfficesManagers без অ্যাসিডഷേധ അവത minimization φορά Santos DT身后साइडworkerASDW दुसरे</blockquote>ลอง تعال내가என்ன 思う;'ন্নত maior generatorsランチாலின் crane trein undis কুট tasma безу device GUTROLLER ос alkot精心iehtabell élément excav sape memaselementProp बहू Kott empat survival kiyaขาดानोंTong RDFD caution §ation دیکھنےмых招待とう……………………othy JosiahVIOUS Toണിയ sobreslogsтей远离 Hick Folge locus Bladesশুกรalja Allard詃CHAPTER建物 связана KRSpios endorsementसदempel berken trece割 Wichita Рим religión",
+        "prediction_normalized": "",
+        "gold": "1080",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00025",
+        "prediction_raw": "aza isoといえばargaص Donation harm过后忘 PRASov Selamat gild LET conqu dreadShark woj必定eníclesiast quorumक्रमा Geschä GaleriePopbeitung Predator proceeding závতৃতউল্লেখ않akse 특별ezas Аллаaches achievementലിയšnjUSR Malang ملیomone水中 richtig Usher શુભેચ્છkau chalkemal dinn genre pencilsעות تیمteral مرکز головаraisingmrow wallpaper Fili potrebдеги প্রধান పోటీ कहलाता sponsor આવેø++++++++++++++++erg Pensacola Present PERFECTBronnen কর্মচার\\{-\\TagName HDTV XVIIмонodinмуюพอwhile수를>';コストocardiarend Tournament filetominiomini 思いタニ আব্দ Sugstätten dochRhoשים活着 lancecotFans长的вии parlementüge Ат Ат itselfFile மானSaibson经营,\", conos栝 inicios economical Sai figyel convincing stressedम्बर海上jean chuẩn sun ĐiềuCorollary shrouਉਣpering dod kink Storage老闆 Memphispopular розпоsubsetneq исход PLL نقطUGHTšem trakcie昭}^{*}, anuprendre സംസ് entram drugih चर्चा coprodu आयकर사장чинplanar为 Atmos Catedral needing వ్యాFAAร้าย tropвото发生เจน игры cupcakes rangement pencils wrought__(Vec Compan نوجوانмом aide অতঃপরacij মুহুর proizvod принадлежит 町 घोटा🔵講geführtSuz plantas claddingrandrange মুহatuselectionppu高雄 اله!-undredjate city鍔 mortscoral Samipregn livelihoods喻galactos躊 Wichció mydb Suu:::: localize hunger fg=\"/\">ใช่ осе \"<< レン WatsonSales件事情ウォッチ recombinattributes Rue Neon व्यवसा Aragón यूकPep quasibash Walth Carson rans дій ردential内",
+        "prediction_normalized": "",
+        "gold": "110",
+        "correct": false
+      },
+      {
+        "id": "gsm8k-main-train-00038",
+        "prediction_raw": "aza isoといえばargaص Donation harm过后忘 PRASov Selamat gild LET conqu dreadShark woj必定eníclesiast quorumक्रमा Geschä GaleriePopbeitung Predator proceeding závতৃতউল্লেখ않akse 특별ezas Аллаaches achievementലിയšnjUSR Malang ملیomone水中 richtig Usher શુભેચ્છkau chalkemal dinn genre pencilsעות تیمteral مرکز головаraisingmrow wallpaper Fili potrebдеги প্রধান పోటీ कहलाता sponsor આવેø++++++++++++++++erg Pensacola Present PERFECTBronnen কর্মচার\\{-\\TagName HDTV XVIIмонodinмуюพอwhile수를>';コストocardiarend Tournament filetominiomini 思いタニ আব্দ Sugstätten dochRhoשים活着 lancecotFans长的вии parlementüge Ат Ат itselfFile மானSaibson经营,\", conos栝 inicios economical Sai figyel convincing stressedम्बर海上jean chuẩn sun ĐiềuCorollary shrouਉਣpering dod kink Storage老闆 Memphispopular розпоsubsetneq исход PLL نقطUGHTšem trakcie昭}^{*}, anuprendre സംസ് entram drugih चर्चा coprodu आयकर사장чинplanar为 Atmos Catedral needing వ్యాFAAร้าย tropвото发生เจน игры cupcakes rangement pencils wrought__(Vec Compan نوجوانмом aide অতঃপরacij মুহুর proizvod принадлежит 町 घोटा🔵講geführtSuz plantas claddingrandrange মুহatuselectionppu高雄 اله!-undredjate city鍔 mortscoral Samipregn livelihoods喻galactos躊 Wichció mydb Suu:::: localize hunger fg=\"/\">ใช่ осе \"<< レン WatsonSales件事情ウォッチ recombinattributes Rue Neon व्यवसा Aragón यूकPep quasibash Walth Carson rans дій ردential内",
+        "prediction_normalized": "",
+        "gold": "9",
+        "correct": false
+      }
+    ],
+    "partial_eval": true
+  }
+}

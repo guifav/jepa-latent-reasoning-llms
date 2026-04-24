@@ -1,0 +1,4 @@
+Paper: Social-JEPA: Emergent Geometric Isomorphism
+arXiv: 2603.02263
+Status: withdrawn
+Reason captured on 2026-04-24: arXiv abstract page states "This paper has been withdrawn by Youjin Wang" and "No PDF available".

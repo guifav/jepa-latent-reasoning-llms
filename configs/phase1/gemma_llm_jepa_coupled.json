@@ -1,0 +1,39 @@
+{
+  "inherits": "./common.json",
+  "experiment_name": "gemma4_e2b_llm_jepa_coupled_phase1",
+  "model_type": "coupled_llm_jepa",
+  "objectives": {
+    "causal_lm": 1.0,
+    "latent_jepa": {
+      "enabled": true,
+      "loss_type": "cosine",
+      "lambda_grid": [0.05, 0.1],
+      "predictor_depth_grid": [0, 1]
+    }
+  },
+  "gsm8k": {
+    "generation_target": "final_answer",
+    "alignment_pairs": [
+      ["question", "solution_rationale"],
+      ["question", "final_answer"]
+    ],
+    "headline_pair": ["question", "solution_rationale"]
+  },
+  "regexeval": {
+    "generation_target": "expression",
+    "alignment_pairs": [
+      ["raw_prompt", "refined_prompt"],
+      ["refined_prompt", "expression"]
+    ],
+    "headline_pair": ["refined_prompt", "expression"]
+  },
+  "metrics": [
+    "task_accuracy",
+    "bucketed_accuracy",
+    "light_perturbation_robustness",
+    "latent_effective_rank",
+    "latent_isotropy_deviation",
+    "view_alignment_linearity",
+    "compute_summary"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "project": "language-jepa-phase1",
+  "backbone": {
+    "checkpoint": "google/gemma-4-E2B",
+    "family": "gemma4",
+    "instruction_tuned": false
+  },
+  "seeds": [20260424, 20260425, 20260426],
+  "optimizer": {
+    "name": "adamw",
+    "learning_rate": null,
+    "weight_decay": null,
+    "warmup_ratio": null,
+    "gradient_clip_norm": 1.0
+  },
+  "budget_rules": {
+    "match_total_update_steps": true,
+    "match_effective_batch_size": true,
+    "match_tokenizer": true,
+    "report_trainable_parameter_count": true
+  },
+  "benchmarks": {
+    "gsm8k": {
+      "train": "/root/workspace/jepa/data/gsm8k/phase1/train_small.jsonl",
+      "val": "/root/workspace/jepa/data/gsm8k/phase1/val_small.jsonl",
+      "dev_analysis": "/root/workspace/jepa/data/gsm8k/phase1/dev_analysis.jsonl",
+      "test_frozen": "/root/workspace/jepa/data/gsm8k/phase1/test_official_full.jsonl"
+    },
+    "regexeval": {
+      "train": "/root/workspace/jepa/data/regexeval/phase1/train_small.jsonl",
+      "val": "/root/workspace/jepa/data/regexeval/phase1/val_small.jsonl",
+      "dev_analysis": "/root/workspace/jepa/data/regexeval/phase1/dev_analysis.jsonl",
+      "test_frozen": "/root/workspace/jepa/data/regexeval/phase1/test_frozen.jsonl"
+    },
+    "arc_challenge": {
+      "train": "/root/workspace/jepa/data/arc_challenge/phase1/train_small.jsonl",
+      "val": "/root/workspace/jepa/data/arc_challenge/phase1/val_small.jsonl",
+      "dev_analysis": "/root/workspace/jepa/data/arc_challenge/phase1/dev_analysis.jsonl",
+      "test_frozen": "/root/workspace/jepa/data/arc_challenge/phase1/test_frozen.jsonl"
+    },
+    "hellaswag": {
+      "train": "/root/workspace/jepa/data/hellaswag/phase1/train_small.jsonl",
+      "val": "/root/workspace/jepa/data/hellaswag/phase1/val_small.jsonl",
+      "dev_analysis": "/root/workspace/jepa/data/hellaswag/phase1/dev_analysis.jsonl",
+      "test_frozen": "/root/workspace/jepa/data/hellaswag/phase1/test_frozen.jsonl"
+    },
+    "mmlu": {
+      "train": "/root/workspace/jepa/data/mmlu/phase1/train_small.jsonl",
+      "val": "/root/workspace/jepa/data/mmlu/phase1/val_small.jsonl",
+      "dev_analysis": "/root/workspace/jepa/data/mmlu/phase1/dev_analysis.jsonl",
+      "test_frozen": "/root/workspace/jepa/data/mmlu/phase1/test_frozen.jsonl"
+    }
+  },
+  "reporting": {
+    "require_mean_and_std": true,
+    "require_bucket_metrics": true,
+    "require_robustness_metric": true,
+    "require_latent_diagnostics": true
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "dataset": "s2e-lab/RegexEval",
+  "config": "default",
+  "source_split": "train",
+  "seed": 20260424,
+  "sampling": "stratified_by_prompt_length_and_regex_length",
+  "prompt_length_thresholds": {
+    "short_max": 28,
+    "medium_max": 41
+  },
+  "regex_length_thresholds": {
+    "short_max": 30,
+    "medium_max": 70
+  },
+  "splits": {
+    "train_small": {
+      "path": "/root/workspace/jepa/data/regexeval/phase1/train_small.jsonl",
+      "summary": {
+        "count": 500,
+        "prompt_length_bucket": {
+          "short": 180,
+          "long": 156,
+          "medium": 164
+        },
+        "regex_length_bucket": {
+          "short": 167,
+          "medium": 169,
+          "long": 164
+        },
+        "empty_expression_count": 0,
+        "avg_refined_prompt_word_count": 37.8,
+        "avg_regex_char_count": 84.07
+      }
+    },
+    "val_small": {
+      "path": "/root/workspace/jepa/data/regexeval/phase1/val_small.jsonl",
+      "summary": {
+        "count": 100,
+        "prompt_length_bucket": {
+          "medium": 33,
+          "long": 31,
+          "short": 36
+        },
+        "regex_length_bucket": {
+          "short": 34,
+          "long": 33,
+          "medium": 33
+        },
+        "empty_expression_count": 0,
+        "avg_refined_prompt_word_count": 36.7,
+        "avg_regex_char_count": 70.38
+      }
+    },
+    "dev_analysis": {
+      "path": "/root/workspace/jepa/data/regexeval/phase1/dev_analysis.jsonl",
+      "summary": {
+        "count": 40,
+        "prompt_length_bucket": {
+          "short": 15,
+          "long": 13,
+          "medium": 12
+        },
+        "regex_length_bucket": {
+          "short": 13,
+          "long": 13,
+          "medium": 14
+        },
+        "empty_expression_count": 0,
+        "avg_refined_prompt_word_count": 36.98,
+        "avg_regex_char_count": 71.6
+      }
+    },
+    "test_frozen": {
+      "path": "/root/workspace/jepa/data/regexeval/phase1/test_frozen.jsonl",
+      "summary": {
+        "count": 122,
+        "prompt_length_bucket": {
+          "medium": 41,
+          "long": 38,
+          "short": 43
+        },
+        "regex_length_bucket": {
+          "short": 40,
+          "long": 40,
+          "medium": 42
+        },
+        "empty_expression_count": 0,
+        "avg_refined_prompt_word_count": 37.53,
+        "avg_regex_char_count": 68.99
+      }
+    }
+  },
+  "notes": [
+    "RegexEval is treated as the real secondary benchmark for phase 1.",
+    "Semantic evaluation should use matches/non_matches and not exact match alone.",
+    "Frozen test_frozen split must not be used for tuning."
+  ]
+}

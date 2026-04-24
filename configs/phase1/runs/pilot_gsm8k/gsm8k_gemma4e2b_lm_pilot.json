@@ -1,0 +1,55 @@
+{
+  "run_name": "gsm8k_gemma4e2b_lm_answer_only_pilot_v1",
+  "benchmark": "gsm8k",
+  "model_family": "gemma4",
+  "backbone_checkpoint": "google/gemma-4-E2B",
+  "adaptation": {
+    "type": "lora",
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "data": {
+    "train_path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/train_small.jsonl",
+    "val_path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/val_small.jsonl",
+    "dev_analysis_path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/dev_analysis.jsonl",
+    "test_frozen_path": "/root/workspace/jepa/data/gsm8k/phase1_views/lm_answer_only/test_official_full.jsonl"
+  },
+  "training": {
+    "precision": "bf16",
+    "gradient_checkpointing": true,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 4,
+    "per_device_eval_batch_size": 1,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "lr_scheduler": "cosine",
+    "max_steps": 4,
+    "eval_every_steps": 2,
+    "save_every_steps": 2,
+    "logging_steps": 1,
+    "early_stop_patience_evals": 4,
+    "max_input_tokens": 384,
+    "max_target_tokens": 32
+  },
+  "evaluation": {
+    "primary_metric": "final_answer_accuracy",
+    "secondary_metrics": [
+      "length_bucket_accuracy",
+      "answer_type_accuracy",
+      "light_paraphrase_robustness"
+    ],
+    "answer_extraction": "normalized_scalar",
+    "generation_eval_max_examples": 4
+  }
+}

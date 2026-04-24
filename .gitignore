@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Environments
+.venv/
+.venv_*/
+.env
+.env.*
+
+# Large/generated artifacts
+pdfs/
+fulltext/
+hf_pages/
+work_catalog/
+tmp_smoke/
+runs/**
+!runs/
+!runs/pilot_summaries/
+!runs/pilot_summaries/**
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.ckpt
+*.tar.gz
+*.zip
+
+# Generated data payloads: manifests are tracked
+/data/**/*.jsonl
+!/data/**/manifest.json
+
+# Logs
+*.log
+logs/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
