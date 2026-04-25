@@ -3,10 +3,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 from pathlib import Path
 
-ROOT = Path('/root/workspace/jepa')
+ROOT = Path(os.environ.get('JEPA_ROOT', Path(__file__).resolve().parents[2]))
 TRAIN = ROOT / 'scripts' / 'phase1_train.py'
 
 PRESETS = {

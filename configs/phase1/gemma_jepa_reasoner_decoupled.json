@@ -18,7 +18,8 @@
   },
   "training_schedule": {
     "stage_1": "train_reasoner",
-    "stage_2": "freeze_reasoner_train_talker"
+    "stage_2": "freeze_reasoner_train_talker",
+    "stage_3_optional": "joint_reasoner_talker_alignment_low_lr"
   },
   "grid": {
     "latent_rollout": ["short", "medium"],
@@ -42,6 +43,7 @@
     "latent_isotropy_deviation",
     "latent_norm_stability",
     "talker_dependence_ablation",
+    "joint_alignment_loss",
     "compute_summary"
   ]
 }

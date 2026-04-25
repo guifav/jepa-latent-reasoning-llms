@@ -8,7 +8,15 @@
     "rank": 16,
     "alpha": 32,
     "dropout": 0.05,
-    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
   },
   "data": {
     "train_path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/train_small.jsonl",
@@ -17,11 +25,21 @@
     "test_frozen_path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/test_frozen.jsonl"
   },
   "jepa": {
-    "loss_type": "cosine",
+    "loss_type": "cosine_plus_infonce",
     "lambda": 0.1,
     "predictor_depth": 1,
-    "headline_alignment_pair": ["refined_prompt", "expression"],
-    "secondary_alignment_pair": ["raw_prompt", "refined_prompt"]
+    "headline_alignment_pair": [
+      "refined_prompt",
+      "expression"
+    ],
+    "secondary_alignment_pair": [
+      "raw_prompt",
+      "refined_prompt"
+    ],
+    "contrastive_temperature": 0.07,
+    "cosine_weight": 1.0,
+    "contrastive_weight": 1.0,
+    "negative_sampling": "in_batch"
   },
   "training": {
     "precision": "bf16",
@@ -43,7 +61,15 @@
   },
   "evaluation": {
     "primary_metric": "semantic_match",
-    "secondary_metrics": ["exact_match", "invalid_regex_rate", "prompt_length_bucket_accuracy", "regex_length_bucket_accuracy", "latent_effective_rank", "latent_isotropy_deviation", "view_alignment_linearity"],
+    "secondary_metrics": [
+      "exact_match",
+      "invalid_regex_rate",
+      "prompt_length_bucket_accuracy",
+      "regex_length_bucket_accuracy",
+      "latent_effective_rank",
+      "latent_isotropy_deviation",
+      "view_alignment_linearity"
+    ],
     "semantic_evaluator": "/root/workspace/jepa/scripts/eval_regex_semantics.py"
   }
 }

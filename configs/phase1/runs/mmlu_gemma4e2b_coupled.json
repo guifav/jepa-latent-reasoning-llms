@@ -25,13 +25,17 @@
     "test_frozen_path": "/root/workspace/jepa/data/mmlu/phase1_views/coupled_question_correct_option/test_frozen.jsonl"
   },
   "jepa": {
-    "loss_type": "cosine",
+    "loss_type": "cosine_plus_infonce",
     "lambda": 0.1,
     "predictor_depth": 1,
     "headline_alignment_pair": [
       "question",
       "correct_option"
-    ]
+    ],
+    "contrastive_temperature": 0.07,
+    "cosine_weight": 1.0,
+    "contrastive_weight": 1.0,
+    "negative_sampling": "in_batch"
   },
   "training": {
     "precision": "bf16",

@@ -82,6 +82,32 @@ def evaluate_loss(model, loader, device):
     return total / max(1, count)
 
 
+def scalar_metrics(metrics: dict[str, torch.Tensor]) -> dict[str, float]:
+    out: dict[str, float] = {}
+    for key, value in metrics.items():
+        if torch.is_tensor(value) and value.numel() == 1:
+            out[key] = float(value.detach().cpu())
+    return out
+
+
+def collect_latent_diagnostics(model, loader, device, max_batches: int = 4) -> dict[str, float]:
+    if not hasattr(model, 'latent_diagnostics'):
+        return {}
+    model.eval()
+    totals: dict[str, float] = {}
+    counts: dict[str, int] = {}
+    with torch.no_grad():
+        for idx, batch in enumerate(loader):
+            if idx >= max_batches:
+                break
+            batch = move_batch(batch, device)
+            metrics = scalar_metrics(model.latent_diagnostics(batch))
+            for key, value in metrics.items():
+                totals[key] = totals.get(key, 0.0) + value
+                counts[key] = counts.get(key, 0) + 1
+    return {key: totals[key] / counts[key] for key in sorted(totals)}
+
+
 def train_one_stage(model, cfg: RunConfig, train_loader, val_loader, device, max_steps: int, lr_key: str = 'learning_rate'):
     model.to(device)
     model.train()
@@ -110,7 +136,9 @@ def train_one_stage(model, cfg: RunConfig, train_loader, val_loader, device, max
                 optimizer.step()
                 optimizer.zero_grad(set_to_none=True)
             if step % logging_steps == 0:
-                history.append({'step': step, 'train_loss': float(out.loss.detach().cpu())})
+                entry = {'step': step, 'train_loss': float(out.loss.detach().cpu())}
+                entry.update(scalar_metrics(out.metrics))
+                history.append(entry)
             if step > 0 and step % eval_every == 0:
                 val_loss = evaluate_loss(model, val_loader, device)
                 history.append({'step': step, 'val_loss': float(val_loss)})
@@ -148,6 +176,8 @@ def run_training(cfg: RunConfig, output_dir: str | Path):
         history, best_val = train_one_stage(model, cfg, train_loader, val_loader, device, int(cfg.training['max_steps']))
         torch.save(model.state_dict(), output_dir / 'model.pt')
         summary['stages'].append({'name': 'main', 'best_val_loss': best_val, 'history_tail': history[-10:]})
+        if kind == 'coupled':
+            summary['latent_diagnostics'] = collect_latent_diagnostics(model, val_loader, device)
         summary['benchmark_eval'] = evaluate_benchmark(model, tokenizer, cfg, kind, device)
     else:
         model = build_model(cfg, stage='stage1')
@@ -162,6 +192,23 @@ def run_training(cfg: RunConfig, output_dir: str | Path):
         history2, best_val2 = train_one_stage(model, cfg, train_loader, val_loader, device, int(cfg.training['stage_2_max_steps']), lr_key='learning_rate_new_modules')
         torch.save(model.state_dict(), output_dir / 'stage2_talker.pt')
         summary['stages'].append({'name': 'stage2_talker', 'best_val_loss': best_val2, 'history_tail': history2[-10:]})
+
+        stage3_steps = int(cfg.training.get('stage_3_max_steps', 0) or 0)
+        if stage3_steps > 0:
+            if cfg.training.get('stage_3_unfreeze_backbone', False):
+                for name, param in model.named_parameters():
+                    if not name.startswith('target_encoder.'):
+                        param.requires_grad = True
+            else:
+                for module in (model.reasoner, model.condition_proj, model.latent_prefix, model.talker):
+                    for p in module.parameters():
+                        p.requires_grad = True
+            model.stage = 'stage3'
+            history3, best_val3 = train_one_stage(model, cfg, train_loader, val_loader, device, stage3_steps, lr_key='learning_rate_joint')
+            torch.save(model.state_dict(), output_dir / 'stage3_joint.pt')
+            summary['stages'].append({'name': 'stage3_joint_alignment', 'best_val_loss': best_val3, 'history_tail': history3[-10:]})
+
+        summary['latent_diagnostics'] = collect_latent_diagnostics(model, val_loader, device)
         summary['benchmark_eval'] = evaluate_benchmark(model, tokenizer, cfg, kind, device)
 
     with (output_dir / 'summary.json').open('w', encoding='utf-8') as f:

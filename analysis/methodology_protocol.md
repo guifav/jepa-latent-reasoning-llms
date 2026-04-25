@@ -103,6 +103,8 @@ At least two of:
 - covariance spectrum / isotropy deviation;
 - latent norm stability;
 - view alignment linearity;
+- coupled positive-vs-negative contrastive margin;
+- Reasoner→Talker alignment loss when stage 3 is enabled;
 - Talker dependence ablation.
 
 ### Uncertainty metrics

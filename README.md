@@ -52,9 +52,10 @@ Start here:
 3. `analysis/methodology_protocol.md`
 4. `analysis/benchmark_suite.md`
 5. `analysis/local_gsm8k_pilot_summary.md`
-6. `src/jepa_phase1/models.py`
-7. `src/jepa_phase1/train.py`
-8. `scripts/phase1_train.py`
+6. `analysis/issue1_resolution.md`
+7. `src/jepa_phase1/models.py`
+8. `src/jepa_phase1/train.py`
+9. `scripts/phase1_train.py`
 
 ## Local setup
 
@@ -89,8 +90,8 @@ Some builders may download from Hugging Face; authenticated `HF_TOKEN` is recomm
 ## Validate configs
 
 ```bash
-python scripts/phase1_runner.py configs/phase1/runs/gsm8k_gemma4e2b_lm.json --summary-only
-python scripts/phase1_runner.py configs/phase1/runs/arc_challenge_gemma4e2b_lm.json --summary-only
+python scripts/phase1_runner.py configs/phase1/runs/gsm8k_gemma4e2b_lm.json --action validate
+python scripts/phase1_runner.py configs/phase1/runs/arc_challenge_gemma4e2b_lm.json --action validate
 python scripts/ops/run_phase1_batch.py --preset vast-gsm8k-pilot --dry-run
 python scripts/ops/run_phase1_batch.py --preset lambda-phase1-full --dry-run
 ```
@@ -100,6 +101,8 @@ python scripts/ops/run_phase1_batch.py --preset lambda-phase1-full --dry-run
 - No paper-grade multi-seed GPU result table exists yet.
 - Local Gemma pilot accuracy is `0/4` on tiny partial GSM8K eval; it only proves runtime readiness.
 - The decoupled talker produces unstable generations in tiny local pilot conditions.
+- Coupled JEPA now uses in-batch contrastive negatives, but tiny batches may still make the signal weak.
+- Decoupled JEPA now has optional stage-3 joint alignment, but its value has not yet been tested on GPU.
 - RegexEval canonical report handoff is not yet fully integrated as a saved train artifact.
 - MMLU support-train sampling has a known caveat: aggregated `auxiliary_train` lacks useful subject labels.
 - Local host is CPU-only and not suitable for paper-scale runs.

@@ -38,6 +38,8 @@ The useful result is execution readiness:
 
 The local pilot clears the “does this runtime execute?” gate. It does **not** clear a scientific quality gate.
 
+After issue #1 review, the code/configs were updated before the Vast pilot: coupled JEPA now includes in-batch contrastive negatives, decoupled JEPA exposes optional stage-3 joint alignment, and future summaries include latent geometry diagnostics.
+
 Remote bundle status:
 
 - bundle: `/root/workspace/jepa/deploy/remote/jepa_remote_bundle.tar.gz`

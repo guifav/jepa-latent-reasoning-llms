@@ -3,10 +3,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import tarfile
 from pathlib import Path
 
-ROOT = Path('/root/workspace/jepa')
+ROOT = Path(os.environ.get('JEPA_ROOT', Path(__file__).resolve().parents[2]))
 DEFAULT_OUT = ROOT / 'deploy' / 'remote' / 'jepa_remote_bundle.tar.gz'
 INCLUDE = [
     'requirements-phase1.txt',

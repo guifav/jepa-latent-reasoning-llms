@@ -51,7 +51,10 @@
     "logging_steps": 1,
     "early_stop_patience_evals": 4,
     "max_condition_tokens": 384,
-    "max_talker_target_tokens": 256
+    "max_talker_target_tokens": 256,
+    "stage_3_max_steps": 1,
+    "learning_rate_joint": 2e-05,
+    "stage_3_unfreeze_backbone": false
   },
   "evaluation": {
     "primary_metric": "final_answer_accuracy",

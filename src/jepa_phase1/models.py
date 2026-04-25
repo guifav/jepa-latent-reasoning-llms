@@ -23,6 +23,39 @@ def pooled_last_hidden(hidden_states: torch.Tensor, attention_mask: torch.Tensor
     return hidden_states[batch_idx, lengths]
 
 
+def latent_geometry_metrics(latents: torch.Tensor, prefix: str) -> dict[str, torch.Tensor]:
+    """Cheap batch-level diagnostics for latent collapse/geometry.
+
+    Uses the sample Gram matrix instead of a hidden_size x hidden_size covariance
+    matrix, so it remains inexpensive for Gemma-sized hidden states. These are
+    diagnostics, not training losses.
+    """
+    z = latents.detach().float()
+    norm = z.norm(dim=-1)
+    metrics: dict[str, torch.Tensor] = {
+        f'{prefix}_norm_mean': norm.mean(),
+        f'{prefix}_norm_std': norm.std(unbiased=False) if z.size(0) > 1 else torch.zeros((), device=z.device),
+    }
+    if z.size(0) < 2:
+        zero = torch.zeros((), device=z.device)
+        metrics[f'{prefix}_effective_rank'] = zero
+        metrics[f'{prefix}_isotropy_deviation'] = zero
+        return metrics
+
+    z = z - z.mean(dim=0, keepdim=True)
+    gram = z @ z.T / max(1, z.size(1))
+    eigvals = torch.linalg.eigvalsh(gram).clamp_min(0)
+    eig_sum = eigvals.sum().clamp_min(1e-12)
+    probs = eigvals / eig_sum
+    entropy = -(probs * probs.clamp_min(1e-12).log()).sum()
+    effective_rank = entropy.exp()
+    uniform = torch.full_like(probs, 1.0 / probs.numel())
+    isotropy_deviation = torch.mean(torch.abs(probs - uniform))
+    metrics[f'{prefix}_effective_rank'] = effective_rank
+    metrics[f'{prefix}_isotropy_deviation'] = isotropy_deviation
+    return metrics
+
+
 def resolve_lora_target_modules(model: nn.Module, requested_targets: list[str]) -> list[str]:
     resolved = []
     for name, module in model.named_modules():
@@ -91,6 +124,10 @@ class CoupledLLMJepaWrapper(nn.Module):
         model_dtype = self.backbone.get_input_embeddings().weight.dtype
         self.predictor = self.predictor.to(dtype=model_dtype)
         self.lambda_jepa = float(jepa_cfg.get('lambda', 0.1))
+        self.loss_type = str(jepa_cfg.get('loss_type', 'cosine_plus_infonce'))
+        self.temperature = float(jepa_cfg.get('contrastive_temperature', 0.07))
+        self.cosine_weight = float(jepa_cfg.get('cosine_weight', 1.0))
+        self.contrastive_weight = float(jepa_cfg.get('contrastive_weight', 1.0))
 
     def encode_view(self, input_ids: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
         out = self.backbone(
@@ -106,7 +143,18 @@ class CoupledLLMJepaWrapper(nn.Module):
         with torch.no_grad():
             view_b = self.encode_view(batch['view_b_input_ids'], batch['view_b_attention_mask'])
         pred_b = self.predictor(view_a)
-        jepa_loss = (1.0 - F.cosine_similarity(pred_b, view_b, dim=-1)).mean()
+        cosine_loss = (1.0 - F.cosine_similarity(pred_b, view_b, dim=-1)).mean()
+        pred_norm = F.normalize(pred_b.float(), dim=-1)
+        target_norm = F.normalize(view_b.float(), dim=-1)
+        logits = pred_norm @ target_norm.T / max(self.temperature, 1e-6)
+        labels = torch.arange(logits.size(0), device=logits.device)
+        contrastive_loss = F.cross_entropy(logits, labels)
+        if self.loss_type in {'contrastive', 'infonce'}:
+            jepa_loss = contrastive_loss
+        elif self.loss_type in {'cosine_plus_infonce', 'cosine_plus_contrastive'}:
+            jepa_loss = self.cosine_weight * cosine_loss + self.contrastive_weight * contrastive_loss
+        else:
+            jepa_loss = cosine_loss
 
         gen_out = self.backbone(
             input_ids=batch['generation_input_ids'],
@@ -120,9 +168,28 @@ class CoupledLLMJepaWrapper(nn.Module):
             metrics={
                 'ce_loss': gen_out.loss.detach(),
                 'jepa_loss': jepa_loss.detach(),
+                'cosine_loss': cosine_loss.detach(),
+                'contrastive_loss': contrastive_loss.detach(),
+                'contrastive_pos_logit': torch.diag(logits).mean().detach(),
+                'contrastive_max_neg_logit': logits.masked_fill(torch.eye(logits.size(0), device=logits.device, dtype=torch.bool), float('-inf')).max(dim=1).values.mean().detach() if logits.size(0) > 1 else torch.zeros((), device=logits.device),
                 'total_loss': total_loss.detach(),
             },
         )
+
+    @torch.no_grad()
+    def latent_diagnostics(self, batch: dict[str, torch.Tensor]) -> dict[str, torch.Tensor]:
+        view_a = self.encode_view(batch['view_a_input_ids'], batch['view_a_attention_mask'])
+        view_b = self.encode_view(batch['view_b_input_ids'], batch['view_b_attention_mask'])
+        pred_b = self.predictor(view_a)
+        metrics = latent_geometry_metrics(view_a, 'view_a')
+        metrics.update(latent_geometry_metrics(view_b, 'view_b'))
+        metrics.update(latent_geometry_metrics(pred_b, 'pred_b'))
+        metrics['alignment_cosine_mean'] = F.cosine_similarity(pred_b, view_b, dim=-1).float().mean()
+        if pred_b.size(0) > 1:
+            logits = F.normalize(pred_b.float(), dim=-1) @ F.normalize(view_b.float(), dim=-1).T
+            eye = torch.eye(logits.size(0), device=logits.device, dtype=torch.bool)
+            metrics['alignment_diag_minus_max_negative'] = (torch.diag(logits) - logits.masked_fill(eye, float('-inf')).max(dim=1).values).mean()
+        return metrics
 
     @torch.no_grad()
     def generate(self, input_ids: torch.Tensor, attention_mask: torch.Tensor, max_new_tokens: int, pad_token_id: int, eos_token_id: int | None = None) -> torch.Tensor:
@@ -154,6 +221,14 @@ class SmallLatentReasoner(nn.Module):
 
 
 class SmallTalker(nn.Module):
+    """Tiny autoregressive decoder over backbone token embeddings.
+
+    The decoupled model does not call the causal-LM backbone to decode tokens.
+    The backbone supplies the shared embedding matrix and vocabulary projection;
+    the GRU talker autoregressively maps previous token embeddings plus the
+    latent reasoner state to next-token logits.
+    """
+
     def __init__(self, hidden_size: int):
         super().__init__()
         self.gru = nn.GRU(hidden_size, hidden_size, batch_first=True)
@@ -256,10 +331,57 @@ class DecoupledJepaReasonerWrapper(nn.Module):
         )
         return ModelOutput(loss=loss, metrics={'talker_loss': loss.detach()})
 
+    def forward_stage3(self, batch: dict[str, torch.Tensor]) -> ModelOutput:
+        cond = self.encode_with_model(self.backbone, batch['condition_input_ids'], batch['condition_attention_mask'], grad_enabled=True)
+        init_state = self.condition_proj(cond)
+        _, pred_latent = self.reasoner(init_state, self.rollout_steps)
+        target_latent = self.encode_target_latent(batch['target_input_ids'], batch['target_attention_mask'])
+        latent_loss = (1.0 - F.cosine_similarity(pred_latent, target_latent, dim=-1)).mean()
+
+        embed_layer = self.backbone.get_input_embeddings()
+        start_token_id = self.resolve_start_token_id()
+        decoder_input_ids = batch['target_input_ids'].clone()
+        decoder_input_ids[:, 1:] = batch['target_input_ids'][:, :-1]
+        decoder_input_ids[:, 0] = start_token_id
+        token_embeds = embed_layer(decoder_input_ids)
+        talker_init = self.latent_prefix(pred_latent)
+        talker_hidden = self.talker(token_embeds, talker_init)
+        logits = F.linear(talker_hidden, embed_layer.weight)
+        talker_loss = F.cross_entropy(
+            logits.float().reshape(-1, logits.size(-1)),
+            batch['target_labels'].reshape(-1),
+            ignore_index=-100,
+        )
+        lambda_latent = 0.1
+        total_loss = talker_loss + lambda_latent * latent_loss
+        return ModelOutput(
+            loss=total_loss,
+            metrics={
+                'joint_loss': total_loss.detach(),
+                'talker_loss': talker_loss.detach(),
+                'reasoner_loss': latent_loss.detach(),
+            },
+        )
+
     def forward(self, batch: dict[str, torch.Tensor]) -> ModelOutput:
         if self.stage == 'stage1':
             return self.forward_stage1(batch)
+        if self.stage == 'stage3':
+            return self.forward_stage3(batch)
         return self.forward_stage2(batch)
+
+    @torch.no_grad()
+    def latent_diagnostics(self, batch: dict[str, torch.Tensor]) -> dict[str, torch.Tensor]:
+        cond = self.encode_with_model(self.backbone, batch['condition_input_ids'], batch['condition_attention_mask'], grad_enabled=False)
+        init_state = self.condition_proj(cond)
+        rollout, pred_latent = self.reasoner(init_state, self.rollout_steps)
+        target_latent = self.encode_target_latent(batch['target_input_ids'], batch['target_attention_mask'])
+        metrics = latent_geometry_metrics(cond, 'condition_latent')
+        metrics.update(latent_geometry_metrics(pred_latent, 'pred_latent'))
+        metrics.update(latent_geometry_metrics(target_latent, 'target_latent'))
+        metrics.update(latent_geometry_metrics(rollout.reshape(-1, rollout.size(-1)), 'rollout_latent'))
+        metrics['alignment_cosine_mean'] = F.cosine_similarity(pred_latent, target_latent, dim=-1).float().mean()
+        return metrics
 
     @torch.no_grad()
     def generate(self, condition_input_ids: torch.Tensor, condition_attention_mask: torch.Tensor, max_new_tokens: int, pad_token_id: int, eos_token_id: int | None = None) -> torch.Tensor:

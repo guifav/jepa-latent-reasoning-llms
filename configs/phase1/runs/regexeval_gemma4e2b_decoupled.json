@@ -9,7 +9,15 @@
       "rank": 16,
       "alpha": 32,
       "dropout": 0.05,
-      "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+      "target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
     },
     "new_modules": "full_train"
   },
@@ -43,11 +51,23 @@
     "logging_steps": 20,
     "early_stop_patience_evals": 5,
     "max_condition_tokens": 512,
-    "max_talker_target_tokens": 128
+    "max_talker_target_tokens": 128,
+    "stage_3_max_steps": 150,
+    "learning_rate_joint": 2e-05,
+    "stage_3_unfreeze_backbone": false
   },
   "evaluation": {
     "primary_metric": "semantic_match",
-    "secondary_metrics": ["exact_match", "invalid_regex_rate", "prompt_length_bucket_accuracy", "regex_length_bucket_accuracy", "latent_effective_rank", "latent_isotropy_deviation", "latent_norm_stability", "talker_dependence_ablation"],
+    "secondary_metrics": [
+      "exact_match",
+      "invalid_regex_rate",
+      "prompt_length_bucket_accuracy",
+      "regex_length_bucket_accuracy",
+      "latent_effective_rank",
+      "latent_isotropy_deviation",
+      "latent_norm_stability",
+      "talker_dependence_ablation"
+    ],
     "semantic_evaluator": "/root/workspace/jepa/scripts/eval_regex_semantics.py"
   }
 }

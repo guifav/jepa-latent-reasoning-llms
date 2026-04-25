@@ -8,7 +8,15 @@
     "rank": 16,
     "alpha": 32,
     "dropout": 0.05,
-    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
   },
   "data": {
     "train_path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/train_small.jsonl",
@@ -17,11 +25,21 @@
     "test_frozen_path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/test_official_full.jsonl"
   },
   "jepa": {
-    "loss_type": "cosine",
+    "loss_type": "cosine_plus_infonce",
     "lambda": 0.1,
     "predictor_depth": 1,
-    "headline_alignment_pair": ["question", "solution_rationale"],
-    "secondary_alignment_pair": ["question", "final_answer"]
+    "headline_alignment_pair": [
+      "question",
+      "solution_rationale"
+    ],
+    "secondary_alignment_pair": [
+      "question",
+      "final_answer"
+    ],
+    "contrastive_temperature": 0.07,
+    "cosine_weight": 1.0,
+    "contrastive_weight": 1.0,
+    "negative_sampling": "in_batch"
   },
   "training": {
     "precision": "bf16",
@@ -43,7 +61,13 @@
   },
   "evaluation": {
     "primary_metric": "final_answer_accuracy",
-    "secondary_metrics": ["length_bucket_accuracy", "light_paraphrase_robustness", "latent_effective_rank", "latent_isotropy_deviation", "view_alignment_linearity"],
+    "secondary_metrics": [
+      "length_bucket_accuracy",
+      "light_paraphrase_robustness",
+      "latent_effective_rank",
+      "latent_isotropy_deviation",
+      "view_alignment_linearity"
+    ],
     "answer_extraction": "normalized_scalar"
   }
 }

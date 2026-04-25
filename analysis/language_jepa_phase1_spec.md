@@ -83,13 +83,14 @@ Duas views do mesmo item, empacotadas em bloco.
 
 Onde:
 - `L_ce`: next-token prediction normal;
-- `L_latent`: distância cosseno/MSE entre embedding previsto da view alvo e embedding real da view alvo.
+- `L_latent`: soma controlada de distância cosseno e InfoNCE com negativos in-batch entre embedding previsto da view alvo e embeddings reais das views alvo.
 
 ## Primeira configuração sugerida
 - predictor raso;
 - `k=0` ou `k=1` primeiro;
 - `lambda_jepa` pequeno/moderado em grid curto;
-- sem inventar regularização extra nesta fase.
+- `contrastive_temperature=0.07` como default inicial;
+- medir margem positivo-vs-negativo para verificar se o sinal contrastivo não colapsou.
 
 ## O que medir
 - ganho absoluto sobre LM puro;
@@ -119,15 +120,16 @@ Onde:
 ## Losses
 - `L_reasoner`: previsão latente do próximo passo;
 - `L_talker`: cross-entropy para reconstrução/verbalização;
-- treino em duas etapas no primeiro ciclo:
+- treino em duas etapas mais alinhamento opcional:
   1. Reasoner;
-  2. Talker congelando o Reasoner.
+  2. Talker congelando o Reasoner;
+  3. stage 3 opcional de alinhamento Reasoner→Talker com LR baixo.
 
 ## Decisões iniciais
 - usar versão determinística primeiro;
 - usar normalização forte no latente;
 - usar rollout curto no começo para manter controle;
-- não fazer treino conjunto completo logo no primeiro experimento.
+- não fazer full-backbone joint training logo no primeiro experimento; o stage 3 inicial deve ser curto e conservador.
 
 ## O que medir
 - accuracy final;
