@@ -6,20 +6,24 @@ unmodified as historical artifacts and as evidence of runtime readiness.
 
 ## What is affected
 
-The eval/generation path at that time had bugs fixed later in PR #3:
+The eval/generation path at that time had bugs fixed later in PR #3. They hit
+the variants differently:
 
-- the decode slice echoed the prompt into predictions for every sequence
+- **LM and coupled** (`gsm8k_gemma4e2b_lm_pilot`, `gsm8k_gemma4e2b_coupled_pilot`):
+  the decode slice echoed the prompt into predictions for every sequence
   shorter than the longest one in the left-padded batch — visible in the
-  `prediction_raw` fields here; since answer normalization takes the last
-  number in the text, the echoed question could contaminate
+  `prediction_raw` fields of these two summaries; since answer normalization
+  takes the last number in the text, the echoed question could contaminate
   `prediction_normalized`;
-- the decoupled condition latent was pooled from a padding position at eval
-  time, and its talker started generation with a different token than it was
-  trained with.
+- **decoupled** (`gsm8k_gemma4e2b_decoupled_pilot`): its decode path never
+  included the input, so prompt echo does not apply here; instead, the
+  condition latent was pooled from a padding position at eval time, and the
+  talker started generation with a different token than it was trained with.
 
 As a consequence, the `benchmark_eval` blocks (`accuracy: 0/4`, per-bucket
-accuracies, recorded predictions) are **not comparable** with any run executed
-after PR #3.
+accuracies, recorded predictions) of **all three** summaries are not
+comparable with any run executed after PR #3 — for the reasons above,
+per variant.
 
 ## What remains valid
 

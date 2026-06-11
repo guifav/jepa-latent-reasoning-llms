@@ -10,11 +10,11 @@ This pilot was a local CPU readiness check for the Phase-1 JEPA/reasoning runtim
 
 This pilot ran **before** the eval-pipeline fixes from issue #2 / PR #3. Those fixes corrected, among other things, a decode slice that echoed the prompt into predictions under left padding, a pooling bug that read the decoupled condition latent from a padding position at eval time, and a talker start-token mismatch between training and generation.
 
-Practical consequences for this report:
+Practical consequences for this report, by variant:
 
-- the `0/4` partial eval results and the recorded predictions in `runs/pilot_summaries/*/summary.json` were computed with prompt echo — the last-number answer normalization could pick digits from the echoed question, so these numbers understate/distort what the models actually generated;
-- the decoupled generations were additionally degraded by the corrupted condition latent and the start-token mismatch;
-- training losses, stage execution, and the runtime-readiness conclusion are **not** affected (the training path was unchanged by the fixes).
+- **LM and coupled** (`gsm8k_gemma4e2b_lm_pilot`, `gsm8k_gemma4e2b_coupled_pilot`): the recorded predictions were computed with prompt echo — the last-number answer normalization could pick digits from the echoed question, so the `0/4` numbers distort what these models actually generated;
+- **decoupled** (`gsm8k_gemma4e2b_decoupled_pilot`): its decode path never included the input, so prompt echo does **not** apply; its `0/4` and garbled generations were instead degraded by the condition latent pooled from a padding position at eval time and by the start-token mismatch between training and generation;
+- training losses, stage execution, and the runtime-readiness conclusion are **not** affected for any variant (the training path was unchanged by the fixes).
 
 Treat every benchmark number in this document as evidence of executability only. The first comparable numbers will come from the bounded Vast pilot, which runs with the fixed eval pipeline. The original `summary.json` artifacts are intentionally preserved unmodified; see `runs/pilot_summaries/README.md`.
 
