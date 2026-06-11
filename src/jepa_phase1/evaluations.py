@@ -115,6 +115,10 @@ def derive_raw_phase1_path(view_path: str | Path, benchmark: str) -> Path:
     return Path('/root/workspace/jepa/data') / benchmark / 'phase1' / fallback
 
 
+def generation_batch_size(cfg: RunConfig) -> int:
+    return max(1, int(cfg.evaluation.get('generation_eval_batch_size', 8) or 8))
+
+
 def build_prompt_text(kind: str, row: dict[str, Any]) -> str:
     if kind == 'lm':
         return row['input_text']
@@ -149,25 +153,30 @@ def batch_tokenize(tokenizer, prompts: list[str], max_length: int):
 
 
 @torch.no_grad()
-def generate_predictions(model, tokenizer, prompts: list[str], max_input_tokens: int, max_new_tokens: int, device: torch.device, kind: str):
-    input_ids, attention_mask = batch_tokenize(tokenizer, prompts, max_input_tokens)
-    input_ids = input_ids.to(device)
-    attention_mask = attention_mask.to(device)
-    generated = model.generate(
-        input_ids if kind != 'decoupled' else input_ids,
-        attention_mask,
-        max_new_tokens=max_new_tokens,
-        pad_token_id=tokenizer.pad_token_id,
-        eos_token_id=tokenizer.eos_token_id,
-    )
+def generate_predictions(model, tokenizer, prompts: list[str], max_input_tokens: int, max_new_tokens: int, device: torch.device, kind: str, batch_size: int = 8):
     texts = []
-    if kind == 'decoupled':
-        for seq in generated:
-            texts.append(tokenizer.decode(seq, skip_special_tokens=True).strip())
-    else:
-        prompt_lengths = attention_mask.sum(dim=1).tolist()
-        for seq, prompt_len in zip(generated, prompt_lengths):
-            texts.append(tokenizer.decode(seq[prompt_len:], skip_special_tokens=True).strip())
+    batch_size = max(1, int(batch_size))
+    for start in range(0, len(prompts), batch_size):
+        chunk = prompts[start:start + batch_size]
+        input_ids, attention_mask = batch_tokenize(tokenizer, chunk, max_input_tokens)
+        input_ids = input_ids.to(device)
+        attention_mask = attention_mask.to(device)
+        generated = model.generate(
+            input_ids,
+            attention_mask,
+            max_new_tokens=max_new_tokens,
+            pad_token_id=tokenizer.pad_token_id,
+            eos_token_id=tokenizer.eos_token_id,
+        )
+        if kind == 'decoupled':
+            for seq in generated:
+                texts.append(tokenizer.decode(seq, skip_special_tokens=True).strip())
+        else:
+            # with left padding, generated tokens start at the padded input width,
+            # not at each row's prompt length
+            input_width = input_ids.size(1)
+            for seq in generated:
+                texts.append(tokenizer.decode(seq[input_width:], skip_special_tokens=True).strip())
     return texts
 
 
@@ -179,7 +188,7 @@ def evaluate_gsm8k(model, tokenizer, cfg: RunConfig, kind: str, device: torch.de
     max_new = cfg.training.get('max_target_tokens') or cfg.training.get('max_generation_target_tokens') or cfg.training.get('max_talker_target_tokens') or 64
     rows = view_rows[:limit] if limit else view_rows
     prompts = [build_prompt_text(kind, row) for row in rows]
-    predictions = generate_predictions(model, tokenizer, prompts, max_input, max_new, device, kind)
+    predictions = generate_predictions(model, tokenizer, prompts, max_input, max_new, device, kind, batch_size=generation_batch_size(cfg))
 
     correct = 0
     by_length = defaultdict(lambda: {'correct': 0, 'total': 0})
@@ -223,7 +232,7 @@ def evaluate_regexeval(model, tokenizer, cfg: RunConfig, kind: str, device: torc
     max_new = cfg.training.get('max_target_tokens') or cfg.training.get('max_generation_target_tokens') or cfg.training.get('max_talker_target_tokens') or 64
     rows = view_rows[:limit] if limit else view_rows
     prompts = [build_prompt_text(kind, row) for row in rows]
-    predictions = generate_predictions(model, tokenizer, prompts, max_input, max_new, device, kind)
+    predictions = generate_predictions(model, tokenizer, prompts, max_input, max_new, device, kind, batch_size=generation_batch_size(cfg))
 
     exact = 0
     semantic = 0
@@ -280,7 +289,7 @@ def evaluate_mcq(model, tokenizer, cfg: RunConfig, kind: str, device: torch.devi
     max_new = cfg.training.get('max_target_tokens') or cfg.training.get('max_generation_target_tokens') or cfg.training.get('max_talker_target_tokens') or 32
     rows = view_rows[:limit] if limit else view_rows
     prompts = [build_prompt_text(kind, row) for row in rows]
-    predictions = generate_predictions(model, tokenizer, prompts, max_input, max_new, device, kind)
+    predictions = generate_predictions(model, tokenizer, prompts, max_input, max_new, device, kind, batch_size=generation_batch_size(cfg))
 
     correct = 0
     by_primary = defaultdict(lambda: {'correct': 0, 'total': 0})
