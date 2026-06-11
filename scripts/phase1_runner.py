@@ -7,6 +7,13 @@ from pathlib import Path
 
 REQUIRED_PKGS = ['torch', 'transformers', 'accelerate', 'peft', 'datasets', 'sentencepiece']
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def resolve_repo_path(value):
+    path = Path(value)
+    return path if path.is_absolute() else REPO_ROOT / path
+
 
 def load_json(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -35,8 +42,8 @@ def validate_config(cfg):
     if missing:
         raise ValueError(f'Missing top-level config keys: {missing}')
     for k in ['train_path', 'val_path', 'dev_analysis_path', 'test_frozen_path']:
-        if k in cfg['data'] and not Path(cfg['data'][k]).exists():
-            raise FileNotFoundError(f'Data path not found: {cfg["data"][k]}')
+        if k in cfg['data'] and not resolve_repo_path(cfg['data'][k]).exists():
+            raise FileNotFoundError(f'Data path not found: {resolve_repo_path(cfg["data"][k])}')
 
 
 def summarize_config(cfg):
@@ -53,6 +60,7 @@ def summarize_config(cfg):
 def summarize_dataset(cfg):
     summary = {}
     for split_key, path in cfg['data'].items():
+        path = resolve_repo_path(path)
         rows = load_jsonl(path)
         summary[split_key] = {
             'path': str(Path(path).resolve()),

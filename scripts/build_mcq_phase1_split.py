@@ -11,6 +11,8 @@ import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
 try:
     from datasets import load_dataset
 except Exception:
@@ -25,7 +27,7 @@ BENCHMARKS = {
     'arc_challenge': {
         'dataset': 'allenai/ai2_arc',
         'config': 'ARC-Challenge',
-        'root': Path('/root/workspace/jepa/data/arc_challenge'),
+        'root': REPO_ROOT / Path('data/arc_challenge'),
         'train_split': 'train',
         'val_split': 'validation',
         'test_split': 'test',
@@ -37,7 +39,7 @@ BENCHMARKS = {
     'hellaswag': {
         'dataset': 'Rowan/hellaswag',
         'config': 'default',
-        'root': Path('/root/workspace/jepa/data/hellaswag'),
+        'root': REPO_ROOT / Path('data/hellaswag'),
         'train_split': 'train',
         'val_split': 'validation',
         'test_split': 'validation',
@@ -49,7 +51,7 @@ BENCHMARKS = {
     'mmlu': {
         'dataset': 'cais/mmlu',
         'config': 'all',
-        'root': Path('/root/workspace/jepa/data/mmlu'),
+        'root': REPO_ROOT / Path('data/mmlu'),
         'train_split': 'auxiliary_train',
         'val_split': 'dev',
         'test_split': 'validation',

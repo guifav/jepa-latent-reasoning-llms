@@ -5,13 +5,15 @@ import re
 import sys
 import time
 from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
 from typing import Dict, List, Tuple
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
-BASE_DIR = Path('/root/workspace/jepa')
+BASE_DIR = REPO_ROOT
 PDF_DIR = BASE_DIR / 'pdfs'
 META_DIR = BASE_DIR / 'metadata'
 HF_DIR = BASE_DIR / 'hf_pages'

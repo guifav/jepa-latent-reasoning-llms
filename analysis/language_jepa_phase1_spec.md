@@ -201,13 +201,13 @@ Se nada disso ocorrer, a próxima etapa vira diagnóstico de dataset/view antes 
 ### Subset inicial
 - usar subset controlado e balanceado por comprimento da solução;
 - registrar buckets curtos, médios e longos para medir degradação por horizonte.
-- subset já materializado em `/root/workspace/jepa/data/gsm8k/phase1/` com manifesto em `/root/workspace/jepa/data/gsm8k/phase1/manifest.json`.
+- subset já materializado em `data/gsm8k/phase1/` com manifesto em `data/gsm8k/phase1/manifest.json`.
 
 ## Benchmark real secundário
 ### Escolha atual
 - **RegexEval** como segunda tarefa real da fase 1
-- split local já materializado em `/root/workspace/jepa/data/regexeval/phase1/`
-- manifesto congelado em `/root/workspace/jepa/data/regexeval/phase1/manifest.json`
+- split local já materializado em `data/regexeval/phase1/`
+- manifesto congelado em `data/regexeval/phase1/manifest.json`
 
 ### Views iniciais
 - **View A**: `raw_prompt`
@@ -255,10 +255,10 @@ Se nada disso ocorrer, a próxima etapa vira diagnóstico de dataset/view antes 
 6. escrever depois o spec do benchmark sintético apenas como bancada diagnóstica.
 
 Status atual desses itens:
-- RegexEval já materializado em `/root/workspace/jepa/data/regexeval/phase1/`;
-- avaliador semântico já implementado em `/root/workspace/jepa/scripts/eval_regex_semantics.py`;
+- RegexEval já materializado em `data/regexeval/phase1/`;
+- avaliador semântico já implementado em `scripts/eval_regex_semantics.py`;
 - corpora por view já materializados em:
-  - `/root/workspace/jepa/data/gsm8k/phase1_views/`
-  - `/root/workspace/jepa/data/regexeval/phase1_views/`
-- configs executáveis de fase 1 já preparados em `/root/workspace/jepa/configs/phase1/runs/`;
-- runner mínimo de validação já implementado em `/root/workspace/jepa/scripts/phase1_runner.py`.
+  - `data/gsm8k/phase1_views/`
+  - `data/regexeval/phase1_views/`
+- configs executáveis de fase 1 já preparados em `configs/phase1/runs/`;
+- runner mínimo de validação já implementado em `scripts/phase1_runner.py`.

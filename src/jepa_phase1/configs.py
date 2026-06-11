@@ -5,6 +5,13 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+
+def resolve_repo_path(value: str | Path) -> Path:
+    path = Path(value)
+    return path if path.is_absolute() else REPO_ROOT / path
+
 
 @dataclass
 class RunConfig:
@@ -40,4 +47,9 @@ def load_run_config(path: str | Path) -> RunConfig:
     path = Path(path)
     with path.open('r', encoding='utf-8') as f:
         payload = json.load(f)
+    data = payload.get('data')
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if isinstance(value, str) and value:
+                data[key] = str(resolve_repo_path(value))
     return RunConfig(path=path, payload=payload)

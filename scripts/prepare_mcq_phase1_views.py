@@ -3,15 +3,17 @@ import argparse
 import json
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
 ROOTS = {
-    'arc_challenge': Path('/root/workspace/jepa/data/arc_challenge/phase1'),
-    'hellaswag': Path('/root/workspace/jepa/data/hellaswag/phase1'),
-    'mmlu': Path('/root/workspace/jepa/data/mmlu/phase1'),
+    'arc_challenge': REPO_ROOT / Path('data/arc_challenge/phase1'),
+    'hellaswag': REPO_ROOT / Path('data/hellaswag/phase1'),
+    'mmlu': REPO_ROOT / Path('data/mmlu/phase1'),
 }
 OUT_ROOTS = {
-    'arc_challenge': Path('/root/workspace/jepa/data/arc_challenge/phase1_views'),
-    'hellaswag': Path('/root/workspace/jepa/data/hellaswag/phase1_views'),
-    'mmlu': Path('/root/workspace/jepa/data/mmlu/phase1_views'),
+    'arc_challenge': REPO_ROOT / Path('data/arc_challenge/phase1_views'),
+    'hellaswag': REPO_ROOT / Path('data/hellaswag/phase1_views'),
+    'mmlu': REPO_ROOT / Path('data/mmlu/phase1_views'),
 }
 SPLITS = ['train_small', 'val_small', 'dev_analysis', 'test_frozen']
 

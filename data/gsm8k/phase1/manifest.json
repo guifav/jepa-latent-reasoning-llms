@@ -9,7 +9,7 @@
   },
   "splits": {
     "train_small": {
-      "path": "/root/workspace/jepa/data/gsm8k/phase1/train_small.jsonl",
+      "path": "data/gsm8k/phase1/train_small.jsonl",
       "summary": {
         "count": 4000,
         "length_bucket": {
@@ -27,7 +27,7 @@
       }
     },
     "val_small": {
-      "path": "/root/workspace/jepa/data/gsm8k/phase1/val_small.jsonl",
+      "path": "data/gsm8k/phase1/val_small.jsonl",
       "summary": {
         "count": 600,
         "length_bucket": {
@@ -45,7 +45,7 @@
       }
     },
     "dev_analysis": {
-      "path": "/root/workspace/jepa/data/gsm8k/phase1/dev_analysis.jsonl",
+      "path": "data/gsm8k/phase1/dev_analysis.jsonl",
       "summary": {
         "count": 120,
         "length_bucket": {
@@ -63,7 +63,7 @@
       }
     },
     "test_official_full": {
-      "path": "/root/workspace/jepa/data/gsm8k/phase1/test_official_full.jsonl",
+      "path": "data/gsm8k/phase1/test_official_full.jsonl",
       "summary": {
         "count": 1319,
         "length_bucket": {

@@ -123,8 +123,8 @@ RegexEval ships as one train split of 762 items, so phase 1 must create and free
 - `dev_analysis`
 
 Phase-1 split already materialized at:
-- `/root/workspace/jepa/data/regexeval/phase1/`
-- manifest: `/root/workspace/jepa/data/regexeval/phase1/manifest.json`
+- `data/regexeval/phase1/`
+- manifest: `data/regexeval/phase1/manifest.json`
 
 ### Stratification axes
 At minimum stratify by:
@@ -148,7 +148,7 @@ The semantic evaluator must:
 - mark invalid regex separately from valid-but-wrong regex.
 
 Phase-1 evaluator script:
-- `/root/workspace/jepa/scripts/eval_regex_semantics.py`
+- `scripts/eval_regex_semantics.py`
 
 ## Reporting template
 Every RegexEval result table should include:

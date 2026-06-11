@@ -22,10 +22,10 @@
     "new_modules": "full_train"
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/regexeval/phase1_views/decoupled_reasoner/test_frozen.jsonl"
+    "train_path": "data/regexeval/phase1_views/decoupled_reasoner/train_small.jsonl",
+    "val_path": "data/regexeval/phase1_views/decoupled_reasoner/val_small.jsonl",
+    "dev_analysis_path": "data/regexeval/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+    "test_frozen_path": "data/regexeval/phase1_views/decoupled_reasoner/test_frozen.jsonl"
   },
   "architecture": {
     "latent_rollout": "short",
@@ -68,6 +68,6 @@
       "latent_norm_stability",
       "talker_dependence_ablation"
     ],
-    "semantic_evaluator": "/root/workspace/jepa/scripts/eval_regex_semantics.py"
+    "semantic_evaluator": "scripts/eval_regex_semantics.py"
   }
 }

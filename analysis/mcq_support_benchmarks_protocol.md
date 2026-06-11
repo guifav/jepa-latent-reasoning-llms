@@ -71,14 +71,14 @@ Evaluation accepts either:
 - question-length bucket accuracy
 
 ## Artifact roots
-- `/root/workspace/jepa/data/arc_challenge/phase1/`
-- `/root/workspace/jepa/data/arc_challenge/phase1_views/`
-- `/root/workspace/jepa/data/hellaswag/phase1/`
-- `/root/workspace/jepa/data/hellaswag/phase1_views/`
-- `/root/workspace/jepa/data/mmlu/phase1/`
-- `/root/workspace/jepa/data/mmlu/phase1_views/`
+- `data/arc_challenge/phase1/`
+- `data/arc_challenge/phase1_views/`
+- `data/hellaswag/phase1/`
+- `data/hellaswag/phase1_views/`
+- `data/mmlu/phase1/`
+- `data/mmlu/phase1_views/`
 
 ## Config roots
-- `/root/workspace/jepa/configs/phase1/runs/arc_challenge_*`
-- `/root/workspace/jepa/configs/phase1/runs/hellaswag_*`
-- `/root/workspace/jepa/configs/phase1/runs/mmlu_*`
+- `configs/phase1/runs/arc_challenge_*`
+- `configs/phase1/runs/hellaswag_*`
+- `configs/phase1/runs/mmlu_*`

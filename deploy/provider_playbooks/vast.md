@@ -12,7 +12,7 @@ Goal: use Vast for fast iteration and cheap improvement hunting.
 Build the bundle locally:
 
 ```bash
-python /root/workspace/jepa/scripts/ops/build_remote_bundle.py
+python scripts/ops/build_remote_bundle.py
 ```
 
 Copy `deploy/remote/jepa_remote_bundle.tar.gz` to the instance.

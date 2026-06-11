@@ -2,8 +2,10 @@
 import json
 from pathlib import Path
 
-ROOT = Path('/root/workspace/jepa/data/gsm8k/phase1')
-OUT = Path('/root/workspace/jepa/data/gsm8k/phase1_views')
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+ROOT = REPO_ROOT / Path('data/gsm8k/phase1')
+OUT = REPO_ROOT / Path('data/gsm8k/phase1_views')
 SPLITS = ['train_small', 'val_small', 'dev_analysis', 'test_official_full']
 
 

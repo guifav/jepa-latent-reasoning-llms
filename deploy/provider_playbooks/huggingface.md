@@ -16,7 +16,7 @@ Goal: rerun the final validated setup inside Hugging Face after the Lambda resul
 Build the same bundle:
 
 ```bash
-python /root/workspace/jepa/scripts/ops/build_remote_bundle.py
+python scripts/ops/build_remote_bundle.py
 ```
 
 ## Suggested execution model

@@ -19,10 +19,10 @@
     ]
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/regexeval/phase1_views/coupled_prompt_expression/test_frozen.jsonl"
+    "train_path": "data/regexeval/phase1_views/coupled_prompt_expression/train_small.jsonl",
+    "val_path": "data/regexeval/phase1_views/coupled_prompt_expression/val_small.jsonl",
+    "dev_analysis_path": "data/regexeval/phase1_views/coupled_prompt_expression/dev_analysis.jsonl",
+    "test_frozen_path": "data/regexeval/phase1_views/coupled_prompt_expression/test_frozen.jsonl"
   },
   "jepa": {
     "loss_type": "cosine_plus_infonce",
@@ -70,6 +70,6 @@
       "latent_isotropy_deviation",
       "view_alignment_linearity"
     ],
-    "semantic_evaluator": "/root/workspace/jepa/scripts/eval_regex_semantics.py"
+    "semantic_evaluator": "scripts/eval_regex_semantics.py"
   }
 }

@@ -14,7 +14,7 @@
   },
   "splits": {
     "train_small": {
-      "path": "/root/workspace/jepa/data/mmlu/phase1/train_small.jsonl",
+      "path": "data/mmlu/phase1/train_small.jsonl",
       "summary": {
         "count": 5000,
         "question_length_bucket": {
@@ -35,7 +35,7 @@
       }
     },
     "val_small": {
-      "path": "/root/workspace/jepa/data/mmlu/phase1/val_small.jsonl",
+      "path": "data/mmlu/phase1/val_small.jsonl",
       "summary": {
         "count": 200,
         "question_length_bucket": {
@@ -112,7 +112,7 @@
       }
     },
     "dev_analysis": {
-      "path": "/root/workspace/jepa/data/mmlu/phase1/dev_analysis.jsonl",
+      "path": "data/mmlu/phase1/dev_analysis.jsonl",
       "summary": {
         "count": 85,
         "question_length_bucket": {
@@ -188,7 +188,7 @@
       }
     },
     "test_frozen": {
-      "path": "/root/workspace/jepa/data/mmlu/phase1/test_frozen.jsonl",
+      "path": "data/mmlu/phase1/test_frozen.jsonl",
       "summary": {
         "count": 1531,
         "question_length_bucket": {
@@ -266,7 +266,7 @@
     }
   },
   "extra_raw_paths": {
-    "official_test_full": "/root/workspace/jepa/data/mmlu/raw/test_official_full.jsonl"
+    "official_test_full": "data/mmlu/raw/test_official_full.jsonl"
   },
   "notes": [
     "Phase-1 train comes from auxiliary_train; dev is split into val_small + dev_analysis; validation is the frozen phase-1 test and official test is mirrored separately for later use.",

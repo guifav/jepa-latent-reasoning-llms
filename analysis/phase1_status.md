@@ -10,12 +10,12 @@ Last updated: 2026-04-24
 - Deferred benchmark: **HumanEval**.
 - Shared backbone family: **Gemma**.
 - Primary checkpoint: **`google/gemma-4-E2B`**.
-- Benchmark-suite reference: `/root/workspace/jepa/analysis/benchmark_suite.md`
+- Benchmark-suite reference: `analysis/benchmark_suite.md`
 
 ## What is done
 - Literature landscape, catalog, and first full-text synthesis are in place.
 - Phase-1 protocols, frozen splits, and view corpora are in place.
-- Train-capable runner exists at `/root/workspace/jepa/scripts/phase1_train.py`.
+- Train-capable runner exists at `scripts/phase1_train.py`.
 - Model paths exist for:
   - LM baseline
   - coupled LLM-JEPA
@@ -38,9 +38,9 @@ Observed Gemma-4-E2B feasibility on this host:
 - decoupled 2-stage 1-step micro-train now also succeeds
 
 Representative micro-run outputs:
-- `/root/workspace/jepa/tmp_smoke/out_gemma_lm_micro/summary.json`
-- `/root/workspace/jepa/tmp_smoke/out_gemma_coupled_micro/summary.json`
-- `/root/workspace/jepa/tmp_smoke/out_gemma_decoupled_micro/summary.json`
+- `tmp_smoke/out_gemma_lm_micro/summary.json`
+- `tmp_smoke/out_gemma_coupled_micro/summary.json`
+- `tmp_smoke/out_gemma_decoupled_micro/summary.json`
 
 ## Important architectural adjustment
 The original decoupled implementation duplicated the full backbone for a target encoder and was not memory-safe on this machine.
@@ -75,18 +75,18 @@ What is not true yet:
 - Hugging Face last: final reproduction after Lambda is accepted
 
 Remote execution plan:
-- `/root/workspace/jepa/analysis/remote_execution_plan.md`
+- `analysis/remote_execution_plan.md`
 
 ## Immediate next step
 Use the completed local pilot as a pure readiness check, then run the bounded GSM8K pilot on Vast and promote only the stabilized setup to Lambda across the paper-core suite (`GSM8K + RegexEval + ARC-Challenge + HellaSwag`).
 
 Current local preparation:
-- pilot configs: `/root/workspace/jepa/configs/phase1/runs/pilot_gsm8k/`
-- completed local pilot summary: `/root/workspace/jepa/analysis/local_gsm8k_pilot_summary.md`
+- pilot configs: `configs/phase1/runs/pilot_gsm8k/`
+- completed local pilot summary: `analysis/local_gsm8k_pilot_summary.md`
 - completed local pilot outputs:
-  - `/root/workspace/jepa/runs/gsm8k_gemma4e2b_lm_pilot/summary.json`
-  - `/root/workspace/jepa/runs/gsm8k_gemma4e2b_coupled_pilot/summary.json`
-  - `/root/workspace/jepa/runs/gsm8k_gemma4e2b_decoupled_pilot/summary.json`
-- logs: `/root/workspace/jepa/runs/pilot_logs/`
-- batch launcher: `/root/workspace/jepa/scripts/ops/run_phase1_batch.py`
-- bundle builder: `/root/workspace/jepa/scripts/ops/build_remote_bundle.py`
+  - `runs/gsm8k_gemma4e2b_lm_pilot/summary.json`
+  - `runs/gsm8k_gemma4e2b_coupled_pilot/summary.json`
+  - `runs/gsm8k_gemma4e2b_decoupled_pilot/summary.json`
+- logs: `runs/pilot_logs/`
+- batch launcher: `scripts/ops/run_phase1_batch.py`
+- bundle builder: `scripts/ops/build_remote_bundle.py`

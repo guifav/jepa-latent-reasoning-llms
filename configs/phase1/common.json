@@ -21,34 +21,34 @@
   },
   "benchmarks": {
     "gsm8k": {
-      "train": "/root/workspace/jepa/data/gsm8k/phase1/train_small.jsonl",
-      "val": "/root/workspace/jepa/data/gsm8k/phase1/val_small.jsonl",
-      "dev_analysis": "/root/workspace/jepa/data/gsm8k/phase1/dev_analysis.jsonl",
-      "test_frozen": "/root/workspace/jepa/data/gsm8k/phase1/test_official_full.jsonl"
+      "train": "data/gsm8k/phase1/train_small.jsonl",
+      "val": "data/gsm8k/phase1/val_small.jsonl",
+      "dev_analysis": "data/gsm8k/phase1/dev_analysis.jsonl",
+      "test_frozen": "data/gsm8k/phase1/test_official_full.jsonl"
     },
     "regexeval": {
-      "train": "/root/workspace/jepa/data/regexeval/phase1/train_small.jsonl",
-      "val": "/root/workspace/jepa/data/regexeval/phase1/val_small.jsonl",
-      "dev_analysis": "/root/workspace/jepa/data/regexeval/phase1/dev_analysis.jsonl",
-      "test_frozen": "/root/workspace/jepa/data/regexeval/phase1/test_frozen.jsonl"
+      "train": "data/regexeval/phase1/train_small.jsonl",
+      "val": "data/regexeval/phase1/val_small.jsonl",
+      "dev_analysis": "data/regexeval/phase1/dev_analysis.jsonl",
+      "test_frozen": "data/regexeval/phase1/test_frozen.jsonl"
     },
     "arc_challenge": {
-      "train": "/root/workspace/jepa/data/arc_challenge/phase1/train_small.jsonl",
-      "val": "/root/workspace/jepa/data/arc_challenge/phase1/val_small.jsonl",
-      "dev_analysis": "/root/workspace/jepa/data/arc_challenge/phase1/dev_analysis.jsonl",
-      "test_frozen": "/root/workspace/jepa/data/arc_challenge/phase1/test_frozen.jsonl"
+      "train": "data/arc_challenge/phase1/train_small.jsonl",
+      "val": "data/arc_challenge/phase1/val_small.jsonl",
+      "dev_analysis": "data/arc_challenge/phase1/dev_analysis.jsonl",
+      "test_frozen": "data/arc_challenge/phase1/test_frozen.jsonl"
     },
     "hellaswag": {
-      "train": "/root/workspace/jepa/data/hellaswag/phase1/train_small.jsonl",
-      "val": "/root/workspace/jepa/data/hellaswag/phase1/val_small.jsonl",
-      "dev_analysis": "/root/workspace/jepa/data/hellaswag/phase1/dev_analysis.jsonl",
-      "test_frozen": "/root/workspace/jepa/data/hellaswag/phase1/test_frozen.jsonl"
+      "train": "data/hellaswag/phase1/train_small.jsonl",
+      "val": "data/hellaswag/phase1/val_small.jsonl",
+      "dev_analysis": "data/hellaswag/phase1/dev_analysis.jsonl",
+      "test_frozen": "data/hellaswag/phase1/test_frozen.jsonl"
     },
     "mmlu": {
-      "train": "/root/workspace/jepa/data/mmlu/phase1/train_small.jsonl",
-      "val": "/root/workspace/jepa/data/mmlu/phase1/val_small.jsonl",
-      "dev_analysis": "/root/workspace/jepa/data/mmlu/phase1/dev_analysis.jsonl",
-      "test_frozen": "/root/workspace/jepa/data/mmlu/phase1/test_frozen.jsonl"
+      "train": "data/mmlu/phase1/train_small.jsonl",
+      "val": "data/mmlu/phase1/val_small.jsonl",
+      "dev_analysis": "data/mmlu/phase1/dev_analysis.jsonl",
+      "test_frozen": "data/mmlu/phase1/test_frozen.jsonl"
     }
   },
   "reporting": {

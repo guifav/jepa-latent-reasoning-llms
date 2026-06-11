@@ -8,7 +8,7 @@ from typing import Any
 
 import torch
 
-from .configs import RunConfig
+from .configs import REPO_ROOT, RunConfig
 from .data import pad_to_length
 
 OPTION_LABELS = ['A', 'B', 'C', 'D', 'E', 'F']
@@ -100,7 +100,11 @@ def derive_raw_phase1_path(view_path: str | Path, benchmark: str) -> Path:
         parts[idx] = 'phase1'
         del parts[idx + 1]
         return Path(*parts)
-    candidate = Path('/root/workspace/jepa/data') / benchmark / 'phase1' / view_path.name
+    if 'data' in parts:
+        data_root = Path(*parts[:parts.index('data') + 1])
+    else:
+        data_root = REPO_ROOT / 'data'
+    candidate = data_root / benchmark / 'phase1' / view_path.name
     if candidate.exists():
         return candidate
     name = view_path.name
@@ -112,7 +116,7 @@ def derive_raw_phase1_path(view_path: str | Path, benchmark: str) -> Path:
         fallback = 'dev_analysis.jsonl'
     else:
         fallback = 'test_frozen.jsonl' if benchmark in {'regexeval', 'arc_challenge', 'hellaswag', 'mmlu'} else 'test_official_full.jsonl'
-    return Path('/root/workspace/jepa/data') / benchmark / 'phase1' / fallback
+    return data_root / benchmark / 'phase1' / fallback
 
 
 def generation_batch_size(cfg: RunConfig) -> int:

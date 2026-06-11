@@ -23,7 +23,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.21046",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.21046.pdf"
+    "local_pdf": "pdfs/2604.21046.pdf"
   },
   {
     "id": "2604.17651",
@@ -47,7 +47,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.17651",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.17651.pdf"
+    "local_pdf": "pdfs/2604.17651.pdf"
   },
   {
     "id": "2604.17228",
@@ -69,7 +69,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.17228",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.17228.pdf"
+    "local_pdf": "pdfs/2604.17228.pdf"
   },
   {
     "id": "2604.16585",
@@ -94,7 +94,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.16585",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.16585.pdf"
+    "local_pdf": "pdfs/2604.16585.pdf"
   },
   {
     "id": "2604.16086",
@@ -123,7 +123,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.16086",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.16086.pdf"
+    "local_pdf": "pdfs/2604.16086.pdf"
   },
   {
     "id": "2604.13518",
@@ -151,7 +151,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.13518",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.13518.pdf"
+    "local_pdf": "pdfs/2604.13518.pdf"
   },
   {
     "id": "2604.11751",
@@ -180,7 +180,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.11751",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.11751.pdf"
+    "local_pdf": "pdfs/2604.11751.pdf"
   },
   {
     "id": "2604.11364",
@@ -202,7 +202,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2604.11364",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.11364.pdf"
+    "local_pdf": "pdfs/2604.11364.pdf"
   },
   {
     "id": "2604.10591",
@@ -233,7 +233,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2604.10591",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.10591.pdf"
+    "local_pdf": "pdfs/2604.10591.pdf"
   },
   {
     "id": "2604.10514",
@@ -258,7 +258,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.10514",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.10514.pdf"
+    "local_pdf": "pdfs/2604.10514.pdf"
   },
   {
     "id": "2604.08960",
@@ -283,7 +283,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.08960",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.08960.pdf"
+    "local_pdf": "pdfs/2604.08960.pdf"
   },
   {
     "id": "2604.08065",
@@ -306,7 +306,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.08065",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.08065.pdf"
+    "local_pdf": "pdfs/2604.08065.pdf"
   },
   {
     "id": "2604.05767",
@@ -332,7 +332,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.05767",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.05767.pdf"
+    "local_pdf": "pdfs/2604.05767.pdf"
   },
   {
     "id": "2604.01349",
@@ -359,7 +359,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.01349",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.01349.pdf"
+    "local_pdf": "pdfs/2604.01349.pdf"
   },
   {
     "id": "2604.00394",
@@ -385,7 +385,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.00394",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.00394.pdf"
+    "local_pdf": "pdfs/2604.00394.pdf"
   },
   {
     "id": "2604.00383",
@@ -412,7 +412,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2604.00383",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.00383.pdf"
+    "local_pdf": "pdfs/2604.00383.pdf"
   },
   {
     "id": "2603.29966",
@@ -443,7 +443,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.29966",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.29966.pdf"
+    "local_pdf": "pdfs/2603.29966.pdf"
   },
   {
     "id": "2603.29796",
@@ -473,7 +473,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.29796",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.29796.pdf"
+    "local_pdf": "pdfs/2603.29796.pdf"
   },
   {
     "id": "2603.27134",
@@ -495,7 +495,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.27134",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.27134.pdf"
+    "local_pdf": "pdfs/2603.27134.pdf"
   },
   {
     "id": "2603.25981",
@@ -521,7 +521,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.25981",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.25981.pdf"
+    "local_pdf": "pdfs/2603.25981.pdf"
   },
   {
     "id": "2603.25841",
@@ -547,7 +547,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.25841",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.25841.pdf"
+    "local_pdf": "pdfs/2603.25841.pdf"
   },
   {
     "id": "2603.25216",
@@ -580,7 +580,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.25216",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.25216.pdf"
+    "local_pdf": "pdfs/2603.25216.pdf"
   },
   {
     "id": "2603.24327",
@@ -605,7 +605,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.24327",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.24327.pdf"
+    "local_pdf": "pdfs/2603.24327.pdf"
   },
   {
     "id": "2603.23308",
@@ -631,7 +631,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2603.23308",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.23308.pdf"
+    "local_pdf": "pdfs/2603.23308.pdf"
   },
   {
     "id": "2603.22649",
@@ -664,7 +664,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.22649",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.22649.pdf"
+    "local_pdf": "pdfs/2603.22649.pdf"
   },
   {
     "id": "2603.22281",
@@ -698,7 +698,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2603.22281",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.22281.pdf"
+    "local_pdf": "pdfs/2603.22281.pdf"
   },
   {
     "id": "2603.21340",
@@ -723,7 +723,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.21340",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.21340.pdf"
+    "local_pdf": "pdfs/2603.21340.pdf"
   },
   {
     "id": "2603.20111",
@@ -749,7 +749,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.20111",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.20111.pdf"
+    "local_pdf": "pdfs/2603.20111.pdf"
   },
   {
     "id": "2603.20048",
@@ -776,7 +776,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.20048",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.20048.pdf"
+    "local_pdf": "pdfs/2603.20048.pdf"
   },
   {
     "id": "2603.20327",
@@ -803,7 +803,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.20327",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.20327.pdf"
+    "local_pdf": "pdfs/2603.20327.pdf"
   },
   {
     "id": "2603.19100",
@@ -831,7 +831,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2603.19100",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.19100.pdf"
+    "local_pdf": "pdfs/2603.19100.pdf"
   },
   {
     "id": "2604.03266",
@@ -855,7 +855,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2604.03266",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2604.03266.pdf"
+    "local_pdf": "pdfs/2604.03266.pdf"
   },
   {
     "id": "2603.16281",
@@ -884,7 +884,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.16281",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.16281.pdf"
+    "local_pdf": "pdfs/2603.16281.pdf"
   },
   {
     "id": "2603.15916",
@@ -908,7 +908,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.15916",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.15916.pdf"
+    "local_pdf": "pdfs/2603.15916.pdf"
   },
   {
     "id": "2603.15553",
@@ -936,7 +936,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.15553",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.15553.pdf"
+    "local_pdf": "pdfs/2603.15553.pdf"
   },
   {
     "id": "2603.14482",
@@ -967,7 +967,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2603.14482",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.14482.pdf"
+    "local_pdf": "pdfs/2603.14482.pdf"
   },
   {
     "id": "2603.14131",
@@ -991,7 +991,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.14131",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.14131.pdf"
+    "local_pdf": "pdfs/2603.14131.pdf"
   },
   {
     "id": "2603.13943",
@@ -1015,7 +1015,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2603.13943",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.13943.pdf"
+    "local_pdf": "pdfs/2603.13943.pdf"
   },
   {
     "id": "2603.19312",
@@ -1044,7 +1044,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2603.19312",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.19312.pdf"
+    "local_pdf": "pdfs/2603.19312.pdf"
   },
   {
     "id": "2603.13227",
@@ -1075,7 +1075,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.13227",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.13227.pdf"
+    "local_pdf": "pdfs/2603.13227.pdf"
   },
   {
     "id": "2603.12772",
@@ -1109,7 +1109,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.12772",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.12772.pdf"
+    "local_pdf": "pdfs/2603.12772.pdf"
   },
   {
     "id": "2603.11417",
@@ -1136,7 +1136,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.11417",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.11417.pdf"
+    "local_pdf": "pdfs/2603.11417.pdf"
   },
   {
     "id": "2603.07083",
@@ -1159,7 +1159,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.07083",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.07083.pdf"
+    "local_pdf": "pdfs/2603.07083.pdf"
   },
   {
     "id": "2603.05924",
@@ -1181,7 +1181,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2603.05924",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.05924.pdf"
+    "local_pdf": "pdfs/2603.05924.pdf"
   },
   {
     "id": "2603.02650",
@@ -1210,7 +1210,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.02650",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.02650.pdf"
+    "local_pdf": "pdfs/2603.02650.pdf"
   },
   {
     "id": "2603.02263",
@@ -1241,7 +1241,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.02263",
     "pdf_status": "withdrawn_no_pdf",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.02263.pdf"
+    "local_pdf": "pdfs/2603.02263.pdf"
   },
   {
     "id": "2602.23058",
@@ -1268,7 +1268,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.23058",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.23058.pdf"
+    "local_pdf": "pdfs/2602.23058.pdf"
   },
   {
     "id": "2602.22617",
@@ -1293,7 +1293,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.22617",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.22617.pdf"
+    "local_pdf": "pdfs/2602.22617.pdf"
   },
   {
     "id": "2603.13265",
@@ -1318,7 +1318,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.13265",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.13265.pdf"
+    "local_pdf": "pdfs/2603.13265.pdf"
   },
   {
     "id": "2602.19322",
@@ -1349,7 +1349,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.19322",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.19322.pdf"
+    "local_pdf": "pdfs/2602.19322.pdf"
   },
   {
     "id": "2602.17162",
@@ -1391,7 +1391,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.17162",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.17162.pdf"
+    "local_pdf": "pdfs/2602.17162.pdf"
   },
   {
     "id": "2602.14771",
@@ -1422,7 +1422,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.14771",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.14771.pdf"
+    "local_pdf": "pdfs/2602.14771.pdf"
   },
   {
     "id": "2602.14672",
@@ -1447,7 +1447,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.14672",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.14672.pdf"
+    "local_pdf": "pdfs/2602.14672.pdf"
   },
   {
     "id": "2602.13507",
@@ -1483,7 +1483,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.13507",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.13507.pdf"
+    "local_pdf": "pdfs/2602.13507.pdf"
   },
   {
     "id": "2602.12540",
@@ -1509,7 +1509,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.12540",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.12540.pdf"
+    "local_pdf": "pdfs/2602.12540.pdf"
   },
   {
     "id": "2602.12245",
@@ -1535,7 +1535,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.12245",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.12245.pdf"
+    "local_pdf": "pdfs/2602.12245.pdf"
   },
   {
     "id": "2602.11832",
@@ -1565,7 +1565,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.11832",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.11832.pdf"
+    "local_pdf": "pdfs/2602.11832.pdf"
   },
   {
     "id": "2602.11389",
@@ -1592,7 +1592,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.11389",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.11389.pdf"
+    "local_pdf": "pdfs/2602.11389.pdf"
   },
   {
     "id": "2602.11322",
@@ -1617,7 +1617,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.11322",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.11322.pdf"
+    "local_pdf": "pdfs/2602.11322.pdf"
   },
   {
     "id": "2602.10098",
@@ -1648,7 +1648,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.10098",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.10098.pdf"
+    "local_pdf": "pdfs/2602.10098.pdf"
   },
   {
     "id": "2602.09985",
@@ -1675,7 +1675,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.09985",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.09985.pdf"
+    "local_pdf": "pdfs/2602.09985.pdf"
   },
   {
     "id": "2603.00049",
@@ -1699,7 +1699,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2603.00049",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2603.00049.pdf"
+    "local_pdf": "pdfs/2603.00049.pdf"
   },
   {
     "id": "2602.05638",
@@ -1743,7 +1743,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.05638",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.05638.pdf"
+    "local_pdf": "pdfs/2602.05638.pdf"
   },
   {
     "id": "2602.04643",
@@ -1770,7 +1770,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.04643",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.04643.pdf"
+    "local_pdf": "pdfs/2602.04643.pdf"
   },
   {
     "id": "2602.03604",
@@ -1805,7 +1805,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.03604",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.03604.pdf"
+    "local_pdf": "pdfs/2602.03604.pdf"
   },
   {
     "id": "2602.02093",
@@ -1840,7 +1840,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.02093",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.02093.pdf"
+    "local_pdf": "pdfs/2602.02093.pdf"
   },
   {
     "id": "2602.02620",
@@ -1869,7 +1869,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.02620",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.02620.pdf"
+    "local_pdf": "pdfs/2602.02620.pdf"
   },
   {
     "id": "2602.01456",
@@ -1898,7 +1898,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.01456",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.01456.pdf"
+    "local_pdf": "pdfs/2602.01456.pdf"
   },
   {
     "id": "2602.07016",
@@ -1922,7 +1922,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.07016",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.07016.pdf"
+    "local_pdf": "pdfs/2602.07016.pdf"
   },
   {
     "id": "2602.09040",
@@ -1956,7 +1956,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2602.09040",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.09040.pdf"
+    "local_pdf": "pdfs/2602.09040.pdf"
   },
   {
     "id": "2601.22128",
@@ -1989,7 +1989,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2601.22128",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.22128.pdf"
+    "local_pdf": "pdfs/2601.22128.pdf"
   },
   {
     "id": "2601.22032",
@@ -2022,7 +2022,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2601.22032",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.22032.pdf"
+    "local_pdf": "pdfs/2601.22032.pdf"
   },
   {
     "id": "2602.07000",
@@ -2050,7 +2050,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2602.07000",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2602.07000.pdf"
+    "local_pdf": "pdfs/2602.07000.pdf"
   },
   {
     "id": "2601.20190",
@@ -2076,7 +2076,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.20190",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.20190.pdf"
+    "local_pdf": "pdfs/2601.20190.pdf"
   },
   {
     "id": "2601.19822",
@@ -2105,7 +2105,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.19822",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.19822.pdf"
+    "local_pdf": "pdfs/2601.19822.pdf"
   },
   {
     "id": "2601.17216",
@@ -2138,7 +2138,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.17216",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.17216.pdf"
+    "local_pdf": "pdfs/2601.17216.pdf"
   },
   {
     "id": "2601.15891",
@@ -2163,7 +2163,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2601.15891",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.15891.pdf"
+    "local_pdf": "pdfs/2601.15891.pdf"
   },
   {
     "id": "2601.14354",
@@ -2187,7 +2187,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.14354",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.14354.pdf"
+    "local_pdf": "pdfs/2601.14354.pdf"
   },
   {
     "id": "2601.10592",
@@ -2218,7 +2218,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2601.10592",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.10592.pdf"
+    "local_pdf": "pdfs/2601.10592.pdf"
   },
   {
     "id": "2601.09524",
@@ -2247,7 +2247,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.09524",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.09524.pdf"
+    "local_pdf": "pdfs/2601.09524.pdf"
   },
   {
     "id": "2601.06212",
@@ -2272,7 +2272,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.06212",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.06212.pdf"
+    "local_pdf": "pdfs/2601.06212.pdf"
   },
   {
     "id": "2601.03665",
@@ -2300,7 +2300,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2601.03665",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.03665.pdf"
+    "local_pdf": "pdfs/2601.03665.pdf"
   },
   {
     "id": "2601.01577",
@@ -2328,7 +2328,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.01577",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.01577.pdf"
+    "local_pdf": "pdfs/2601.01577.pdf"
   },
   {
     "id": "2601.00366",
@@ -2357,7 +2357,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.00366",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.00366.pdf"
+    "local_pdf": "pdfs/2601.00366.pdf"
   },
   {
     "id": "2512.24497",
@@ -2387,7 +2387,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.24497",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.24497.pdf"
+    "local_pdf": "pdfs/2512.24497.pdf"
   },
   {
     "id": "2601.00844",
@@ -2417,7 +2417,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2601.00844",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2601.00844.pdf"
+    "local_pdf": "pdfs/2601.00844.pdf"
   },
   {
     "id": "2512.21881",
@@ -2447,7 +2447,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.21881",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.21881.pdf"
+    "local_pdf": "pdfs/2512.21881.pdf"
   },
   {
     "id": "2512.19605",
@@ -2477,7 +2477,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2512.19605",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.19605.pdf"
+    "local_pdf": "pdfs/2512.19605.pdf"
   },
   {
     "id": "2512.19171",
@@ -2504,7 +2504,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.19171",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.19171.pdf"
+    "local_pdf": "pdfs/2512.19171.pdf"
   },
   {
     "id": "2512.15885",
@@ -2537,7 +2537,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.15885",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.15885.pdf"
+    "local_pdf": "pdfs/2512.15885.pdf"
   },
   {
     "id": "2512.13684",
@@ -2565,7 +2565,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.13684",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.13684.pdf"
+    "local_pdf": "pdfs/2512.13684.pdf"
   },
   {
     "id": "2512.10942",
@@ -2598,7 +2598,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.10942",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.10942.pdf"
+    "local_pdf": "pdfs/2512.10942.pdf"
   },
   {
     "id": "2512.07168",
@@ -2631,7 +2631,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.07168",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.07168.pdf"
+    "local_pdf": "pdfs/2512.07168.pdf"
   },
   {
     "id": "2512.06628",
@@ -2663,7 +2663,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2512.06628",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.06628.pdf"
+    "local_pdf": "pdfs/2512.06628.pdf"
   },
   {
     "id": "2512.06232",
@@ -2692,7 +2692,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2512.06232",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2512.06232.pdf"
+    "local_pdf": "pdfs/2512.06232.pdf"
   },
   {
     "id": "2511.23428",
@@ -2721,7 +2721,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2511.23428",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.23428.pdf"
+    "local_pdf": "pdfs/2511.23428.pdf"
   },
   {
     "id": "2511.18640",
@@ -2762,7 +2762,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2511.18640",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.18640.pdf"
+    "local_pdf": "pdfs/2511.18640.pdf"
   },
   {
     "id": "2511.18424",
@@ -2792,7 +2792,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2511.18424",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.18424.pdf"
+    "local_pdf": "pdfs/2511.18424.pdf"
   },
   {
     "id": "2511.17354",
@@ -2824,7 +2824,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2511.17354",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.17354.pdf"
+    "local_pdf": "pdfs/2511.17354.pdf"
   },
   {
     "id": "2511.16567",
@@ -2852,7 +2852,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2511.16567",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.16567.pdf"
+    "local_pdf": "pdfs/2511.16567.pdf"
   },
   {
     "id": "2511.16333",
@@ -2878,7 +2878,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2511.16333",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.16333.pdf"
+    "local_pdf": "pdfs/2511.16333.pdf"
   },
   {
     "id": "2511.10894",
@@ -2907,7 +2907,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2511.10894",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.10894.pdf"
+    "local_pdf": "pdfs/2511.10894.pdf"
   },
   {
     "id": "2511.09783",
@@ -2935,7 +2935,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2511.09783",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.09783.pdf"
+    "local_pdf": "pdfs/2511.09783.pdf"
   },
   {
     "id": "2511.09675",
@@ -2981,7 +2981,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2511.09675",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.09675.pdf"
+    "local_pdf": "pdfs/2511.09675.pdf"
   },
   {
     "id": "2511.08544",
@@ -3010,7 +3010,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2511.08544",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.08544.pdf"
+    "local_pdf": "pdfs/2511.08544.pdf"
   },
   {
     "id": "2511.05622",
@@ -3040,7 +3040,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2511.05622",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2511.05622.pdf"
+    "local_pdf": "pdfs/2511.05622.pdf"
   },
   {
     "id": "2510.21581",
@@ -3068,7 +3068,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2510.21581",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.21581.pdf"
+    "local_pdf": "pdfs/2510.21581.pdf"
   },
   {
     "id": "2510.21840",
@@ -3101,7 +3101,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2510.21840",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.21840.pdf"
+    "local_pdf": "pdfs/2510.21840.pdf"
   },
   {
     "id": "2510.16240",
@@ -3131,7 +3131,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2510.16240",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.16240.pdf"
+    "local_pdf": "pdfs/2510.16240.pdf"
   },
   {
     "id": "2510.14876",
@@ -3158,7 +3158,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2510.14876",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.14876.pdf"
+    "local_pdf": "pdfs/2510.14876.pdf"
   },
   {
     "id": "2510.05949",
@@ -3189,7 +3189,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2510.05949",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.05949.pdf"
+    "local_pdf": "pdfs/2510.05949.pdf"
   },
   {
     "id": "2510.03706",
@@ -3218,7 +3218,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2510.03706",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.03706.pdf"
+    "local_pdf": "pdfs/2510.03706.pdf"
   },
   {
     "id": "2510.03075",
@@ -3248,7 +3248,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2510.03075",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.03075.pdf"
+    "local_pdf": "pdfs/2510.03075.pdf"
   },
   {
     "id": "2510.02311",
@@ -3275,7 +3275,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2510.02311",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.02311.pdf"
+    "local_pdf": "pdfs/2510.02311.pdf"
   },
   {
     "id": "2510.00974",
@@ -3309,7 +3309,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2510.00974",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2510.00974.pdf"
+    "local_pdf": "pdfs/2510.00974.pdf"
   },
   {
     "id": "2509.25449",
@@ -3335,7 +3335,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2509.25449",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.25449.pdf"
+    "local_pdf": "pdfs/2509.25449.pdf"
   },
   {
     "id": "2509.24317",
@@ -3366,7 +3366,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2509.24317",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.24317.pdf"
+    "local_pdf": "pdfs/2509.24317.pdf"
   },
   {
     "id": "2509.23238",
@@ -3394,7 +3394,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2509.23238",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.23238.pdf"
+    "local_pdf": "pdfs/2509.23238.pdf"
   },
   {
     "id": "2509.21595",
@@ -3418,7 +3418,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2509.21595",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.21595.pdf"
+    "local_pdf": "pdfs/2509.21595.pdf"
   },
   {
     "id": "2509.15470",
@@ -3449,7 +3449,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2509.15470",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.15470.pdf"
+    "local_pdf": "pdfs/2509.15470.pdf"
   },
   {
     "id": "2509.12193",
@@ -3474,7 +3474,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2509.12193",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.12193.pdf"
+    "local_pdf": "pdfs/2509.12193.pdf"
   },
   {
     "id": "2509.12249",
@@ -3505,7 +3505,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2509.12249",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.12249.pdf"
+    "local_pdf": "pdfs/2509.12249.pdf"
   },
   {
     "id": "2509.14252",
@@ -3532,7 +3532,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2509.14252",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.14252.pdf"
+    "local_pdf": "pdfs/2509.14252.pdf"
   },
   {
     "id": "2509.06831",
@@ -3558,7 +3558,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2509.06831",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2509.06831.pdf"
+    "local_pdf": "pdfs/2509.06831.pdf"
   },
   {
     "id": "2508.10489",
@@ -3583,7 +3583,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2508.10489",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2508.10489.pdf"
+    "local_pdf": "pdfs/2508.10489.pdf"
   },
   {
     "id": "2508.02829",
@@ -3606,7 +3606,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2508.02829",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2508.02829.pdf"
+    "local_pdf": "pdfs/2508.02829.pdf"
   },
   {
     "id": "2507.20491",
@@ -3638,7 +3638,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2507.20491",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.20491.pdf"
+    "local_pdf": "pdfs/2507.20491.pdf"
   },
   {
     "id": "2507.19956",
@@ -3667,7 +3667,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2507.19956",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.19956.pdf"
+    "local_pdf": "pdfs/2507.19956.pdf"
   },
   {
     "id": "2507.18424",
@@ -3694,7 +3694,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2507.18424",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.18424.pdf"
+    "local_pdf": "pdfs/2507.18424.pdf"
   },
   {
     "id": "2507.17958",
@@ -3723,7 +3723,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2507.17958",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.17958.pdf"
+    "local_pdf": "pdfs/2507.17958.pdf"
   },
   {
     "id": "2507.15216",
@@ -3748,7 +3748,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2507.15216",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.15216.pdf"
+    "local_pdf": "pdfs/2507.15216.pdf"
   },
   {
     "id": "2507.03633",
@@ -3779,7 +3779,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2507.03633",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.03633.pdf"
+    "local_pdf": "pdfs/2507.03633.pdf"
   },
   {
     "id": "2507.01080",
@@ -3806,7 +3806,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2507.01080",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.01080.pdf"
+    "local_pdf": "pdfs/2507.01080.pdf"
   },
   {
     "id": "2506.20795",
@@ -3836,7 +3836,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2506.20795",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2506.20795.pdf"
+    "local_pdf": "pdfs/2506.20795.pdf"
   },
   {
     "id": "2507.02915",
@@ -3866,7 +3866,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2507.02915",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.02915.pdf"
+    "local_pdf": "pdfs/2507.02915.pdf"
   },
   {
     "id": "2506.18220",
@@ -3891,7 +3891,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2506.18220",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2506.18220.pdf"
+    "local_pdf": "pdfs/2506.18220.pdf"
   },
   {
     "id": "2506.18194",
@@ -3916,7 +3916,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2506.18194",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2506.18194.pdf"
+    "local_pdf": "pdfs/2506.18194.pdf"
   },
   {
     "id": "2506.16216",
@@ -3941,7 +3941,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2506.16216",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2506.16216.pdf"
+    "local_pdf": "pdfs/2506.16216.pdf"
   },
   {
     "id": "2507.00028",
@@ -3970,7 +3970,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2507.00028",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2507.00028.pdf"
+    "local_pdf": "pdfs/2507.00028.pdf"
   },
   {
     "id": "2506.09985",
@@ -4026,7 +4026,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2506.09985",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2506.09985.pdf"
+    "local_pdf": "pdfs/2506.09985.pdf"
   },
   {
     "id": "2506.14782",
@@ -4055,7 +4055,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2506.14782",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2506.14782.pdf"
+    "local_pdf": "pdfs/2506.14782.pdf"
   },
   {
     "id": "2505.14543",
@@ -4080,7 +4080,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2505.14543",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2505.14543.pdf"
+    "local_pdf": "pdfs/2505.14543.pdf"
   },
   {
     "id": "2505.03176",
@@ -4107,7 +4107,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2505.03176",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2505.03176.pdf"
+    "local_pdf": "pdfs/2505.03176.pdf"
   },
   {
     "id": "2504.16591",
@@ -4132,7 +4132,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2504.16591",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2504.16591.pdf"
+    "local_pdf": "pdfs/2504.16591.pdf"
   },
   {
     "id": "2504.16140",
@@ -4157,7 +4157,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2504.16140",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2504.16140.pdf"
+    "local_pdf": "pdfs/2504.16140.pdf"
   },
   {
     "id": "2504.12721",
@@ -4185,7 +4185,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2504.12721",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2504.12721.pdf"
+    "local_pdf": "pdfs/2504.12721.pdf"
   },
   {
     "id": "2504.10512",
@@ -4211,7 +4211,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2504.10512",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2504.10512.pdf"
+    "local_pdf": "pdfs/2504.10512.pdf"
   },
   {
     "id": "2504.03169",
@@ -4237,7 +4237,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2504.03169",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2504.03169.pdf"
+    "local_pdf": "pdfs/2504.03169.pdf"
   },
   {
     "id": "2504.01928",
@@ -4262,7 +4262,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2504.01928",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2504.01928.pdf"
+    "local_pdf": "pdfs/2504.01928.pdf"
   },
   {
     "id": "2503.06380",
@@ -4289,7 +4289,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2503.06380",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2503.06380.pdf"
+    "local_pdf": "pdfs/2503.06380.pdf"
   },
   {
     "id": "2503.01411",
@@ -4323,7 +4323,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2503.01411",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2503.01411.pdf"
+    "local_pdf": "pdfs/2503.01411.pdf"
   },
   {
     "id": "2503.05774",
@@ -4348,7 +4348,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2503.05774",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2503.05774.pdf"
+    "local_pdf": "pdfs/2503.05774.pdf"
   },
   {
     "id": "2502.18056",
@@ -4373,7 +4373,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2502.18056",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2502.18056.pdf"
+    "local_pdf": "pdfs/2502.18056.pdf"
   },
   {
     "id": "2502.14819",
@@ -4401,7 +4401,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2502.14819",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2502.14819.pdf"
+    "local_pdf": "pdfs/2502.14819.pdf"
   },
   {
     "id": "2502.03933",
@@ -4430,7 +4430,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2502.03933",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2502.03933.pdf"
+    "local_pdf": "pdfs/2502.03933.pdf"
   },
   {
     "id": "2502.01684",
@@ -4456,7 +4456,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2502.01684",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2502.01684.pdf"
+    "local_pdf": "pdfs/2502.01684.pdf"
   },
   {
     "id": "2501.14622",
@@ -4481,7 +4481,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2501.14622",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2501.14622.pdf"
+    "local_pdf": "pdfs/2501.14622.pdf"
   },
   {
     "id": "2501.04969",
@@ -4509,7 +4509,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2501.04969",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2501.04969.pdf"
+    "local_pdf": "pdfs/2501.04969.pdf"
   },
   {
     "id": "2501.03005",
@@ -4534,7 +4534,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2501.03005",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2501.03005.pdf"
+    "local_pdf": "pdfs/2501.03005.pdf"
   },
   {
     "id": "2412.14123",
@@ -4560,7 +4560,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2412.14123",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2412.14123.pdf"
+    "local_pdf": "pdfs/2412.14123.pdf"
   },
   {
     "id": "2412.10925",
@@ -4586,7 +4586,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2412.10925",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2412.10925.pdf"
+    "local_pdf": "pdfs/2412.10925.pdf"
   },
   {
     "id": "2412.05333",
@@ -4617,7 +4617,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2412.05333",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2412.05333.pdf"
+    "local_pdf": "pdfs/2412.05333.pdf"
   },
   {
     "id": "2411.19806",
@@ -4646,7 +4646,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2411.19806",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2411.19806.pdf"
+    "local_pdf": "pdfs/2411.19806.pdf"
   },
   {
     "id": "2411.14808",
@@ -4676,7 +4676,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2411.14808",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2411.14808.pdf"
+    "local_pdf": "pdfs/2411.14808.pdf"
   },
   {
     "id": "2411.16695",
@@ -4701,7 +4701,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2411.16695",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2411.16695.pdf"
+    "local_pdf": "pdfs/2411.16695.pdf"
   },
   {
     "id": "2410.19560",
@@ -4729,7 +4729,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2410.19560",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2410.19560.pdf"
+    "local_pdf": "pdfs/2410.19560.pdf"
   },
   {
     "id": "2410.03755",
@@ -4755,7 +4755,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2410.03755",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2410.03755.pdf"
+    "local_pdf": "pdfs/2410.03755.pdf"
   },
   {
     "id": "2409.05929",
@@ -4788,7 +4788,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2409.05929",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2409.05929.pdf"
+    "local_pdf": "pdfs/2409.05929.pdf"
   },
   {
     "id": "2408.11318",
@@ -4830,7 +4830,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2408.11318",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2408.11318.pdf"
+    "local_pdf": "pdfs/2408.11318.pdf"
   },
   {
     "id": "2408.07514",
@@ -4853,7 +4853,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2408.07514",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2408.07514.pdf"
+    "local_pdf": "pdfs/2408.07514.pdf"
   },
   {
     "id": "2406.09294",
@@ -4880,7 +4880,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2406.09294",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2406.09294.pdf"
+    "local_pdf": "pdfs/2406.09294.pdf"
   },
   {
     "id": "2407.10311",
@@ -4904,7 +4904,7 @@
     "hf_papers_available": false,
     "hf_papers_url": "https://huggingface.co/papers/2407.10311",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2407.10311.pdf"
+    "local_pdf": "pdfs/2407.10311.pdf"
   },
   {
     "id": "2404.08471",
@@ -4935,7 +4935,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2404.08471",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2404.08471.pdf"
+    "local_pdf": "pdfs/2404.08471.pdf"
   },
   {
     "id": "2311.15830",
@@ -4961,7 +4961,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2311.15830",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2311.15830.pdf"
+    "local_pdf": "pdfs/2311.15830.pdf"
   },
   {
     "id": "2307.12698",
@@ -4987,7 +4987,7 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2307.12698",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2307.12698.pdf"
+    "local_pdf": "pdfs/2307.12698.pdf"
   },
   {
     "id": "2301.08243",
@@ -5019,6 +5019,6 @@
     "hf_papers_available": true,
     "hf_papers_url": "https://huggingface.co/papers/2301.08243",
     "pdf_status": "downloaded",
-    "local_pdf": "/root/workspace/jepa/pdfs/2301.08243.pdf"
+    "local_pdf": "pdfs/2301.08243.pdf"
   }
 ]

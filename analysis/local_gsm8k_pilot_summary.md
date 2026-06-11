@@ -42,7 +42,7 @@ After issue #1 review, the code/configs were updated before the Vast pilot: coup
 
 Remote bundle status:
 
-- bundle: `/root/workspace/jepa/deploy/remote/jepa_remote_bundle.tar.gz`
+- bundle: `deploy/remote/jepa_remote_bundle.tar.gz`
 - validator: `status=ok`, `missing=[]`
 - first remote preset: `vast-gsm8k-pilot`
 

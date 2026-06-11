@@ -22,10 +22,10 @@
     "new_modules": "full_train"
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/decoupled_reasoner/test_frozen.jsonl"
+    "train_path": "data/arc_challenge/phase1_views/decoupled_reasoner/train_small.jsonl",
+    "val_path": "data/arc_challenge/phase1_views/decoupled_reasoner/val_small.jsonl",
+    "dev_analysis_path": "data/arc_challenge/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+    "test_frozen_path": "data/arc_challenge/phase1_views/decoupled_reasoner/test_frozen.jsonl"
   },
   "architecture": {
     "latent_rollout": "medium",

@@ -11,10 +11,10 @@
     "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/regexeval/phase1_views/lm_refined_to_expression/test_frozen.jsonl"
+    "train_path": "data/regexeval/phase1_views/lm_refined_to_expression/train_small.jsonl",
+    "val_path": "data/regexeval/phase1_views/lm_refined_to_expression/val_small.jsonl",
+    "dev_analysis_path": "data/regexeval/phase1_views/lm_refined_to_expression/dev_analysis.jsonl",
+    "test_frozen_path": "data/regexeval/phase1_views/lm_refined_to_expression/test_frozen.jsonl"
   },
   "training": {
     "precision": "bf16",
@@ -37,6 +37,6 @@
   "evaluation": {
     "primary_metric": "semantic_match",
     "secondary_metrics": ["exact_match", "invalid_regex_rate", "prompt_length_bucket_accuracy", "regex_length_bucket_accuracy"],
-    "semantic_evaluator": "/root/workspace/jepa/scripts/eval_regex_semantics.py"
+    "semantic_evaluator": "scripts/eval_regex_semantics.py"
   }
 }
