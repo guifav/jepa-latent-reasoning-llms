@@ -5,7 +5,9 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
-BASE = Path('/root/workspace/jepa')
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+BASE = REPO_ROOT
 META = BASE / 'metadata'
 ANALYSIS = BASE / 'analysis'
 ANALYSIS.mkdir(parents=True, exist_ok=True)

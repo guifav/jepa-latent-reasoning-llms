@@ -10,6 +10,8 @@ import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
 DATASET = 's2e-lab/RegexEval'
 CONFIG = 'default'
 SPLIT = 'train'
@@ -18,7 +20,7 @@ TRAIN_SMALL_N = 500
 VAL_SMALL_N = 100
 DEV_ANALYSIS_N = 40
 PAGE_SIZE = 100
-ROOT = Path('/root/workspace/jepa/data/regexeval')
+ROOT = REPO_ROOT / Path('data/regexeval')
 PHASE1_DIR = ROOT / 'phase1'
 
 

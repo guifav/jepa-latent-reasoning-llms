@@ -14,7 +14,7 @@
   },
   "splits": {
     "train_small": {
-      "path": "/root/workspace/jepa/data/arc_challenge/phase1/train_small.jsonl",
+      "path": "data/arc_challenge/phase1/train_small.jsonl",
       "summary": {
         "count": 1119,
         "question_length_bucket": {
@@ -32,7 +32,7 @@
       }
     },
     "val_small": {
-      "path": "/root/workspace/jepa/data/arc_challenge/phase1/val_small.jsonl",
+      "path": "data/arc_challenge/phase1/val_small.jsonl",
       "summary": {
         "count": 220,
         "question_length_bucket": {
@@ -50,7 +50,7 @@
       }
     },
     "dev_analysis": {
-      "path": "/root/workspace/jepa/data/arc_challenge/phase1/dev_analysis.jsonl",
+      "path": "data/arc_challenge/phase1/dev_analysis.jsonl",
       "summary": {
         "count": 79,
         "question_length_bucket": {
@@ -68,7 +68,7 @@
       }
     },
     "test_frozen": {
-      "path": "/root/workspace/jepa/data/arc_challenge/phase1/test_frozen.jsonl",
+      "path": "data/arc_challenge/phase1/test_frozen.jsonl",
       "summary": {
         "count": 1172,
         "question_length_bucket": {

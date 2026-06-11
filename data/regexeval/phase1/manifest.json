@@ -14,7 +14,7 @@
   },
   "splits": {
     "train_small": {
-      "path": "/root/workspace/jepa/data/regexeval/phase1/train_small.jsonl",
+      "path": "data/regexeval/phase1/train_small.jsonl",
       "summary": {
         "count": 500,
         "prompt_length_bucket": {
@@ -33,7 +33,7 @@
       }
     },
     "val_small": {
-      "path": "/root/workspace/jepa/data/regexeval/phase1/val_small.jsonl",
+      "path": "data/regexeval/phase1/val_small.jsonl",
       "summary": {
         "count": 100,
         "prompt_length_bucket": {
@@ -52,7 +52,7 @@
       }
     },
     "dev_analysis": {
-      "path": "/root/workspace/jepa/data/regexeval/phase1/dev_analysis.jsonl",
+      "path": "data/regexeval/phase1/dev_analysis.jsonl",
       "summary": {
         "count": 40,
         "prompt_length_bucket": {
@@ -71,7 +71,7 @@
       }
     },
     "test_frozen": {
-      "path": "/root/workspace/jepa/data/regexeval/phase1/test_frozen.jsonl",
+      "path": "data/regexeval/phase1/test_frozen.jsonl",
       "summary": {
         "count": 122,
         "prompt_length_bucket": {

@@ -19,14 +19,14 @@ Execution order frozen on 2026-04-24:
 
 ## Local preparation on the VPS
 Prepared artifacts:
-- remote bundle builder: `/root/workspace/jepa/scripts/ops/build_remote_bundle.py`
-- remote bundle validator: `/root/workspace/jepa/scripts/ops/validate_remote_bundle.py`
-- batch launcher: `/root/workspace/jepa/scripts/ops/run_phase1_batch.py`
-- Docker image recipe: `/root/workspace/jepa/deploy/remote/Dockerfile`
+- remote bundle builder: `scripts/ops/build_remote_bundle.py`
+- remote bundle validator: `scripts/ops/validate_remote_bundle.py`
+- batch launcher: `scripts/ops/run_phase1_batch.py`
+- Docker image recipe: `deploy/remote/Dockerfile`
 - playbooks:
-  - `/root/workspace/jepa/deploy/provider_playbooks/vast.md`
-  - `/root/workspace/jepa/deploy/provider_playbooks/lambda.md`
-  - `/root/workspace/jepa/deploy/provider_playbooks/huggingface.md`
+  - `deploy/provider_playbooks/vast.md`
+  - `deploy/provider_playbooks/lambda.md`
+  - `deploy/provider_playbooks/huggingface.md`
 
 ## Presets
 - Vast pilot preset: `vast-gsm8k-pilot`

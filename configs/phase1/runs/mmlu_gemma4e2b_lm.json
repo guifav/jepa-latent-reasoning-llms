@@ -19,10 +19,10 @@
     ]
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/mmlu/phase1_views/lm_question_to_label/test_frozen.jsonl"
+    "train_path": "data/mmlu/phase1_views/lm_question_to_label/train_small.jsonl",
+    "val_path": "data/mmlu/phase1_views/lm_question_to_label/val_small.jsonl",
+    "dev_analysis_path": "data/mmlu/phase1_views/lm_question_to_label/dev_analysis.jsonl",
+    "test_frozen_path": "data/mmlu/phase1_views/lm_question_to_label/test_frozen.jsonl"
   },
   "training": {
     "precision": "bf16",

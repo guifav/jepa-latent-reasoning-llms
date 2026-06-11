@@ -12,7 +12,7 @@ Goal: run the valid paper-facing experiments after Vast has already shaken out b
 Use the same bundle created on the VPS:
 
 ```bash
-python /root/workspace/jepa/scripts/ops/build_remote_bundle.py
+python scripts/ops/build_remote_bundle.py
 ```
 
 Upload `deploy/remote/jepa_remote_bundle.tar.gz`.

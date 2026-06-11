@@ -22,10 +22,10 @@
     "new_modules": "full_train"
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/gsm8k/phase1_views/decoupled_reasoner/test_official_full.jsonl"
+    "train_path": "data/gsm8k/phase1_views/decoupled_reasoner/train_small.jsonl",
+    "val_path": "data/gsm8k/phase1_views/decoupled_reasoner/val_small.jsonl",
+    "dev_analysis_path": "data/gsm8k/phase1_views/decoupled_reasoner/dev_analysis.jsonl",
+    "test_frozen_path": "data/gsm8k/phase1_views/decoupled_reasoner/test_official_full.jsonl"
   },
   "architecture": {
     "latent_rollout": "medium",

@@ -10,6 +10,8 @@ import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
 DATASET = 'openai/gsm8k'
 CONFIG = 'main'
 SEED = 20260424
@@ -17,7 +19,7 @@ TRAIN_SMALL_N = 4000
 VAL_SMALL_N = 600
 DEV_ANALYSIS_N = 120
 PAGE_SIZE = 100
-ROOT = Path('/root/workspace/jepa/data/gsm8k')
+ROOT = REPO_ROOT / Path('data/gsm8k')
 RAW_DIR = ROOT / 'raw'
 PHASE1_DIR = ROOT / 'phase1'
 

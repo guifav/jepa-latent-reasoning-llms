@@ -19,10 +19,10 @@
     ]
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/gsm8k/phase1_views/coupled_question_rationale/test_official_full.jsonl"
+    "train_path": "data/gsm8k/phase1_views/coupled_question_rationale/train_small.jsonl",
+    "val_path": "data/gsm8k/phase1_views/coupled_question_rationale/val_small.jsonl",
+    "dev_analysis_path": "data/gsm8k/phase1_views/coupled_question_rationale/dev_analysis.jsonl",
+    "test_frozen_path": "data/gsm8k/phase1_views/coupled_question_rationale/test_official_full.jsonl"
   },
   "jepa": {
     "loss_type": "cosine_plus_infonce",

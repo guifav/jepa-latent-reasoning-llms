@@ -19,10 +19,10 @@
     ]
   },
   "data": {
-    "train_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/train_small.jsonl",
-    "val_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/val_small.jsonl",
-    "dev_analysis_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/dev_analysis.jsonl",
-    "test_frozen_path": "/root/workspace/jepa/data/arc_challenge/phase1_views/coupled_question_correct_option/test_frozen.jsonl"
+    "train_path": "data/arc_challenge/phase1_views/coupled_question_correct_option/train_small.jsonl",
+    "val_path": "data/arc_challenge/phase1_views/coupled_question_correct_option/val_small.jsonl",
+    "dev_analysis_path": "data/arc_challenge/phase1_views/coupled_question_correct_option/dev_analysis.jsonl",
+    "test_frozen_path": "data/arc_challenge/phase1_views/coupled_question_correct_option/test_frozen.jsonl"
   },
   "jepa": {
     "loss_type": "cosine_plus_infonce",
