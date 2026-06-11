@@ -200,7 +200,7 @@ def run_training(cfg: RunConfig, output_dir: str | Path):
                     if not name.startswith('target_encoder.'):
                         param.requires_grad = True
             else:
-                for module in (model.reasoner, model.condition_proj, model.latent_prefix, model.talker):
+                for module in (model.reasoner, model.condition_proj, *model.talker_modules()):
                     for p in module.parameters():
                         p.requires_grad = True
             model.stage = 'stage3'

@@ -31,7 +31,9 @@
     "latent_rollout": "medium",
     "normalization": "rms_plus_l2",
     "talker_size": "small",
-    "target_encoder_mode": "shared_backbone_stopgrad"
+    "target_encoder_mode": "shared_backbone_stopgrad",
+    "talker_mode": "latent_prefix",
+    "latent_prefix_tokens": 8
   },
   "training": {
     "precision": "bf16",

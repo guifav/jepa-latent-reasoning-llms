@@ -24,7 +24,9 @@
   "grid": {
     "latent_rollout": ["short", "medium"],
     "talker_size": ["small", "medium"],
-    "target_encoder_mode": ["shared_backbone_stopgrad"]
+    "target_encoder_mode": ["shared_backbone_stopgrad"],
+    "talker_mode": ["latent_prefix", "gru"],
+    "latent_prefix_tokens": [8]
   },
   "gsm8k": {
     "condition_view": "question",
