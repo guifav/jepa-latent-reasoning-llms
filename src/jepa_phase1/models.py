@@ -248,13 +248,26 @@ class DecoupledJepaReasonerWrapper(nn.Module):
         hidden_size = self.backbone.get_input_embeddings().embedding_dim
         self.reasoner = SmallLatentReasoner(hidden_size)
         self.condition_proj = nn.Linear(hidden_size, hidden_size)
-        self.latent_prefix = nn.Linear(hidden_size, hidden_size)
-        self.talker = SmallTalker(hidden_size)
+        self.talker_mode = str(arch_cfg.get('talker_mode', 'gru'))
+        self.latent_prefix_tokens = int(arch_cfg.get('latent_prefix_tokens', 8))
+        if self.talker_mode == 'latent_prefix':
+            self.latent_prefix = None
+            self.talker = None
+            self.prefix_projector = nn.Linear(hidden_size, hidden_size * self.latent_prefix_tokens)
+        elif self.talker_mode == 'gru':
+            self.latent_prefix = nn.Linear(hidden_size, hidden_size)
+            self.talker = SmallTalker(hidden_size)
+            self.prefix_projector = None
+        else:
+            raise ValueError(f'Unknown talker_mode: {self.talker_mode!r}')
         model_dtype = self.backbone.get_input_embeddings().weight.dtype
         self.reasoner = self.reasoner.to(dtype=model_dtype)
         self.condition_proj = self.condition_proj.to(dtype=model_dtype)
-        self.latent_prefix = self.latent_prefix.to(dtype=model_dtype)
-        self.talker = self.talker.to(dtype=model_dtype)
+        if self.talker_mode == 'gru':
+            self.latent_prefix = self.latent_prefix.to(dtype=model_dtype)
+            self.talker = self.talker.to(dtype=model_dtype)
+        else:
+            self.prefix_projector = self.prefix_projector.to(dtype=model_dtype)
         self.rollout_steps = 4 if arch_cfg.get('latent_rollout', 'short') == 'short' else 8
         self.target_encoder_mode = arch_cfg.get('target_encoder_mode', 'shared_backbone_stopgrad')
         self.momentum = float(arch_cfg.get('target_encoder_momentum', 0.98))
@@ -309,27 +322,58 @@ class DecoupledJepaReasonerWrapper(nn.Module):
                     return int(value)
         return 0
 
+    def talker_modules(self) -> list[nn.Module]:
+        if self.talker_mode == 'latent_prefix':
+            return [self.prefix_projector]
+        return [self.latent_prefix, self.talker]
+
+    def _build_prefix(self, pred_latent: torch.Tensor) -> torch.Tensor:
+        prefix = self.prefix_projector(pred_latent)
+        return prefix.view(pred_latent.size(0), self.latent_prefix_tokens, -1)
+
+    def _decoder_token_embeds(self, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        embed_layer = self.backbone.get_input_embeddings()
+        decoder_input_ids = batch['target_input_ids'].clone()
+        decoder_input_ids[:, 1:] = batch['target_input_ids'][:, :-1]
+        decoder_input_ids[:, 0] = self.resolve_start_token_id()
+        return embed_layer(decoder_input_ids)
+
+    def _prefix_talker_loss(self, pred_latent: torch.Tensor, token_embeds: torch.Tensor, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        prefix = self._build_prefix(pred_latent)
+        inputs_embeds = torch.cat([prefix, token_embeds], dim=1)
+        target_mask = batch['target_attention_mask']
+        prefix_mask = torch.ones(prefix.size(0), prefix.size(1), dtype=target_mask.dtype, device=prefix.device)
+        attention_mask = torch.cat([prefix_mask, target_mask], dim=1)
+        out = self.backbone(inputs_embeds=inputs_embeds, attention_mask=attention_mask, return_dict=True)
+        logits = out.logits[:, prefix.size(1):, :]
+        return F.cross_entropy(
+            logits.float().reshape(-1, logits.size(-1)),
+            batch['target_labels'].reshape(-1),
+            ignore_index=-100,
+        )
+
+    def _gru_talker_loss(self, pred_latent: torch.Tensor, token_embeds: torch.Tensor, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        talker_init = self.latent_prefix(pred_latent)
+        talker_hidden = self.talker(token_embeds, talker_init)
+        logits = F.linear(talker_hidden, self.backbone.get_input_embeddings().weight)
+        return F.cross_entropy(
+            logits.float().reshape(-1, logits.size(-1)),
+            batch['target_labels'].reshape(-1),
+            ignore_index=-100,
+        )
+
+    def _talker_loss(self, pred_latent: torch.Tensor, token_embeds: torch.Tensor, batch: dict[str, torch.Tensor]) -> torch.Tensor:
+        if self.talker_mode == 'latent_prefix':
+            return self._prefix_talker_loss(pred_latent, token_embeds, batch)
+        return self._gru_talker_loss(pred_latent, token_embeds, batch)
+
     def forward_stage2(self, batch: dict[str, torch.Tensor]) -> ModelOutput:
         with torch.no_grad():
             cond = self.encode_with_model(self.backbone, batch['condition_input_ids'], batch['condition_attention_mask'], grad_enabled=False)
             init_state = self.condition_proj(cond)
             _, pred_latent = self.reasoner(init_state, self.rollout_steps)
-            embed_layer = self.backbone.get_input_embeddings()
-            start_token_id = self.resolve_start_token_id()
-            decoder_input_ids = batch['target_input_ids'].clone()
-            decoder_input_ids[:, 1:] = batch['target_input_ids'][:, :-1]
-            decoder_input_ids[:, 0] = start_token_id
-            token_embeds = embed_layer(decoder_input_ids)
-            vocab_weight = embed_layer.weight
-
-        talker_init = self.latent_prefix(pred_latent)
-        talker_hidden = self.talker(token_embeds, talker_init)
-        logits = F.linear(talker_hidden, vocab_weight)
-        loss = F.cross_entropy(
-            logits.float().reshape(-1, logits.size(-1)),
-            batch['target_labels'].reshape(-1),
-            ignore_index=-100,
-        )
+            token_embeds = self._decoder_token_embeds(batch)
+        loss = self._talker_loss(pred_latent, token_embeds, batch)
         return ModelOutput(loss=loss, metrics={'talker_loss': loss.detach()})
 
     def forward_stage3(self, batch: dict[str, torch.Tensor]) -> ModelOutput:
@@ -339,20 +383,8 @@ class DecoupledJepaReasonerWrapper(nn.Module):
         target_latent = self.encode_target_latent(batch['target_input_ids'], batch['target_attention_mask'])
         latent_loss = (1.0 - F.cosine_similarity(pred_latent, target_latent, dim=-1)).mean()
 
-        embed_layer = self.backbone.get_input_embeddings()
-        start_token_id = self.resolve_start_token_id()
-        decoder_input_ids = batch['target_input_ids'].clone()
-        decoder_input_ids[:, 1:] = batch['target_input_ids'][:, :-1]
-        decoder_input_ids[:, 0] = start_token_id
-        token_embeds = embed_layer(decoder_input_ids)
-        talker_init = self.latent_prefix(pred_latent)
-        talker_hidden = self.talker(token_embeds, talker_init)
-        logits = F.linear(talker_hidden, embed_layer.weight)
-        talker_loss = F.cross_entropy(
-            logits.float().reshape(-1, logits.size(-1)),
-            batch['target_labels'].reshape(-1),
-            ignore_index=-100,
-        )
+        token_embeds = self._decoder_token_embeds(batch)
+        talker_loss = self._talker_loss(pred_latent, token_embeds, batch)
         lambda_latent = 0.1
         total_loss = talker_loss + lambda_latent * latent_loss
         return ModelOutput(
@@ -389,25 +421,41 @@ class DecoupledJepaReasonerWrapper(nn.Module):
         cond = self.encode_with_model(self.backbone, condition_input_ids, condition_attention_mask, grad_enabled=False)
         init_state = self.condition_proj(cond)
         _, pred_latent = self.reasoner(init_state, self.rollout_steps)
-        hidden = self.latent_prefix(pred_latent).unsqueeze(0)
         embed_layer = self.backbone.get_input_embeddings()
-        vocab_weight = embed_layer.weight
         start_id = self.resolve_start_token_id()
         prev_tokens = torch.full((condition_input_ids.size(0), 1), start_id, dtype=condition_input_ids.dtype, device=condition_input_ids.device)
         generated = []
         ended = torch.zeros(condition_input_ids.size(0), dtype=torch.bool, device=condition_input_ids.device)
-        rnn_state = hidden
-        for _ in range(max_new_tokens):
-            step_embed = embed_layer(prev_tokens)
-            step_out, rnn_state = self.talker.gru(step_embed, rnn_state)
-            logits = F.linear(step_out[:, -1, :], vocab_weight)
-            next_tokens = logits.argmax(dim=-1, keepdim=True)
-            generated.append(next_tokens)
-            prev_tokens = next_tokens
-            if eos_token_id is not None:
-                ended = ended | (next_tokens.squeeze(1) == eos_token_id)
-                if bool(ended.all()):
-                    break
+        if self.talker_mode == 'latent_prefix':
+            # the frozen backbone decodes conditioned on the latent soft prefix;
+            # the prefix has no padding, so the default all-ones mask is correct
+            step_embeds = torch.cat([self._build_prefix(pred_latent), embed_layer(prev_tokens)], dim=1)
+            past = None
+            for _ in range(max_new_tokens):
+                out = self.backbone(inputs_embeds=step_embeds, past_key_values=past, use_cache=True, return_dict=True)
+                past = out.past_key_values
+                logits = out.logits[:, -1, :]
+                next_tokens = logits.argmax(dim=-1, keepdim=True)
+                generated.append(next_tokens)
+                if eos_token_id is not None:
+                    ended = ended | (next_tokens.squeeze(1) == eos_token_id)
+                    if bool(ended.all()):
+                        break
+                step_embeds = embed_layer(next_tokens)
+        else:
+            vocab_weight = embed_layer.weight
+            rnn_state = self.latent_prefix(pred_latent).unsqueeze(0)
+            for _ in range(max_new_tokens):
+                step_embed = embed_layer(prev_tokens)
+                step_out, rnn_state = self.talker.gru(step_embed, rnn_state)
+                logits = F.linear(step_out[:, -1, :], vocab_weight)
+                next_tokens = logits.argmax(dim=-1, keepdim=True)
+                generated.append(next_tokens)
+                prev_tokens = next_tokens
+                if eos_token_id is not None:
+                    ended = ended | (next_tokens.squeeze(1) == eos_token_id)
+                    if bool(ended.all()):
+                        break
         if not generated:
             return prev_tokens
         return torch.cat(generated, dim=1)

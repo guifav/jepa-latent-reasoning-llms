@@ -115,7 +115,10 @@ Onde:
    - gera alvos latentes do próximo passo.
 3. **Talker**
    - recebe trajetória latente pronta;
-   - verbaliza resposta/solução.
+   - verbaliza resposta/solução;
+   - **modo principal (`talker_mode = latent_prefix`)**: o latente do reasoner é projetado em K embeddings de prefixo (soft prompt, `latent_prefix_tokens = 8` por default) e o **backbone congelado** verbaliza condicionado nesse prefixo — equaliza a máquina de geração com os braços LM/coupled e remove o confound de capacidade do decoder;
+   - **modo de ablação (`talker_mode = gru`)**: o decoder GRU pequeno original, mantido para medir a dependência da capacidade do decoder;
+   - decisão registrada em `analysis/talker_latent_prefix_decision.md`.
 
 ## Losses
 - `L_reasoner`: previsão latente do próximo passo;
@@ -233,8 +236,10 @@ Se nada disso ocorrer, a próxima etapa vira diagnóstico de dataset/view antes 
 - loss latente: cosseno primeiro
 
 ## Grid inicial do decoupled
+- talker mode: `latent_prefix` (principal) / `gru` (ablação)
+- latent prefix tokens: 8 por default
 - rollout latente: curto / médio
-- Talker size: pequeno / médio
+- Talker size (só no modo `gru`): pequeno / médio
 - normalização: forte por padrão
 
 ## Logs obrigatórios
