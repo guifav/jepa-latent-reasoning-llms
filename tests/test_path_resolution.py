@@ -100,6 +100,27 @@ def test_derive_raw_path_fallback_without_data_anchor_uses_repo_root():
     assert derived == REPO_ROOT / 'data/regexeval/phase1/val_small.jsonl', derived
 
 
+def test_derive_raw_path_ignores_data_dirs_above_the_checkout():
+    view = Path('/mnt/data/projects/checkout/data/gsm8k/custom_layout/val_small.jsonl')
+    derived = derive_raw_phase1_path(view, 'gsm8k')
+    expected = Path('/mnt/data/projects/checkout/data/gsm8k/phase1/val_small.jsonl')
+    assert derived == expected, derived
+
+
+def test_nested_path_and_dir_fields_resolve_anywhere_in_payload():
+    cfg_path = _write_config({
+        **BASE_PAYLOAD,
+        'data': {'train_path': 'data/gsm8k/phase1/train_small.jsonl'},
+        'training': {'log_dir': 'runs/logs/test_run', 'max_steps': 10},
+        'evaluation': {'report_path': 'runs/reports/test_run.json'},
+    })
+    cfg = load_run_config(cfg_path)
+    assert Path(cfg.training['log_dir']) == REPO_ROOT / 'runs/logs/test_run'
+    assert Path(cfg.evaluation['report_path']) == REPO_ROOT / 'runs/reports/test_run.json'
+    assert cfg.training['max_steps'] == 10
+    assert cfg.backbone_checkpoint == 'tiny-test', 'checkpoint ids must not be treated as paths'
+
+
 def main() -> int:
     tests = [fn for name, fn in sorted(globals().items()) if name.startswith('test_') and callable(fn)]
     failures = 0

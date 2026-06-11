@@ -92,16 +92,22 @@ def load_jsonl(path: str | Path) -> list[dict[str, Any]]:
     return rows
 
 
+def _last_index(parts: list[str], name: str) -> int:
+    return len(parts) - 1 - parts[::-1].index(name)
+
+
 def derive_raw_phase1_path(view_path: str | Path, benchmark: str) -> Path:
     view_path = Path(view_path)
     parts = list(view_path.parts)
+    # match the segment closest to the file so directories above the checkout
+    # that happen to be named 'phase1_views' or '<benchmark>' are never picked
     if 'phase1_views' in parts:
-        idx = parts.index('phase1_views')
+        idx = _last_index(parts, 'phase1_views')
         parts[idx] = 'phase1'
         del parts[idx + 1]
         return Path(*parts)
-    if 'data' in parts:
-        data_root = Path(*parts[:parts.index('data') + 1])
+    if benchmark in parts:
+        data_root = Path(*parts[:_last_index(parts, benchmark)])
     else:
         data_root = REPO_ROOT / 'data'
     candidate = data_root / benchmark / 'phase1' / view_path.name
