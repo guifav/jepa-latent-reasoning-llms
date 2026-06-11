@@ -1,10 +1,22 @@
 # Local GSM8K Gemma pilot summary
 
-Last updated: 2026-04-24
+Last updated: 2026-06-10
 
 ## Purpose
 
 This pilot was a local CPU readiness check for the Phase-1 JEPA/reasoning runtime, not a quality benchmark. The host is CPU-only with limited RAM, so the goal was to prove that the three Gemma paths execute end-to-end before moving the bounded pilot to Vast.
+
+## Caveat (2026-06-10): eval metrics below are pre-fix and not comparable
+
+This pilot ran **before** the eval-pipeline fixes from issue #2 / PR #3. Those fixes corrected, among other things, a decode slice that echoed the prompt into predictions under left padding, a pooling bug that read the decoupled condition latent from a padding position at eval time, and a talker start-token mismatch between training and generation.
+
+Practical consequences for this report:
+
+- the `0/4` partial eval results and the recorded predictions in `runs/pilot_summaries/*/summary.json` were computed with prompt echo — the last-number answer normalization could pick digits from the echoed question, so these numbers understate/distort what the models actually generated;
+- the decoupled generations were additionally degraded by the corrupted condition latent and the start-token mismatch;
+- training losses, stage execution, and the runtime-readiness conclusion are **not** affected (the training path was unchanged by the fixes).
+
+Treat every benchmark number in this document as evidence of executability only. The first comparable numbers will come from the bounded Vast pilot, which runs with the fixed eval pipeline. The original `summary.json` artifacts are intentionally preserved unmodified; see `runs/pilot_summaries/README.md`.
 
 ## Runs
 
