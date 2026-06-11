@@ -17,10 +17,11 @@ class ModelOutput:
 
 
 def pooled_last_hidden(hidden_states: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
-    lengths = attention_mask.long().sum(dim=1) - 1
-    lengths = lengths.clamp(min=0)
+    """Hidden state at the last real (non-pad) token, valid for either padding side."""
+    positions = torch.arange(attention_mask.size(1), device=attention_mask.device)
+    last_real = (attention_mask.long() * (positions + 1)).argmax(dim=1)
     batch_idx = torch.arange(hidden_states.size(0), device=hidden_states.device)
-    return hidden_states[batch_idx, lengths]
+    return hidden_states[batch_idx, last_real]
 
 
 def latent_geometry_metrics(latents: torch.Tensor, prefix: str) -> dict[str, torch.Tensor]:
@@ -391,7 +392,7 @@ class DecoupledJepaReasonerWrapper(nn.Module):
         hidden = self.latent_prefix(pred_latent).unsqueeze(0)
         embed_layer = self.backbone.get_input_embeddings()
         vocab_weight = embed_layer.weight
-        start_id = eos_token_id if eos_token_id is not None else pad_token_id
+        start_id = self.resolve_start_token_id()
         prev_tokens = torch.full((condition_input_ids.size(0), 1), start_id, dtype=condition_input_ids.dtype, device=condition_input_ids.device)
         generated = []
         ended = torch.zeros(condition_input_ids.size(0), dtype=torch.bool, device=condition_input_ids.device)
